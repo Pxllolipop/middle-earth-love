@@ -44,6 +44,9 @@
             width: 100%;
             height: 100%;
         }
+        .tile img.visible {
+            display: block;
+        }
         footer {
             text-align: center;
             padding: 10px;
@@ -1584,12 +1587,24 @@
         <p>&copy; 2024 - A gift inspired by the beauty of Middle-earth.</p>
     </footer>
     <script>
-        function revealTile(tileId) {
+        // Function to get URL parameters
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`);
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Reveal the tile based on the "tile" parameter
+        const tileId = getParameterByName('tile');
+        if (tileId) {
             const tile = document.getElementById(`tile-${tileId}`);
             if (tile) {
-                const img = tile.querySelector("img");
+                const img = tile.querySelector('img');
                 if (img) {
-                    img.style.display = "block";
+                    img.classList.add('visible');
                 }
             }
         }
