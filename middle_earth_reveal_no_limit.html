@@ -1,0 +1,1631 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Middle-earth Image Reveal</title>
+    <style>
+        body {
+            background-color: #2E2B23;
+            color: #E0D7C6;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4A3C2E;
+        }
+        header h1 {
+            color: #F4EBC1;
+            font-size: 2.5em;
+            text-shadow: 2px 2px #4A3C2E;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(19, 1fr);
+            gap: 2px;
+            max-width: 95%;
+            margin: 20px auto;
+        }
+        .tile {
+            background-color: #4A3C2E;
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
+        }
+        .tile img {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .tile img.visible {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4A3C2E;
+            color: #F4EBC1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reveal the Middle-earth Masterpiece</h1>
+        <p>Scan the QR codes to unlock parts of the image!</p>
+    </header>
+    <div class="image-container">
+
+        <div class="tile" id="tile-1">
+            <img src="part_1.png" alt="Part 1">
+        </div>
+    
+        <div class="tile" id="tile-2">
+            <img src="part_2.png" alt="Part 2">
+        </div>
+    
+        <div class="tile" id="tile-3">
+            <img src="part_3.png" alt="Part 3">
+        </div>
+    
+        <div class="tile" id="tile-4">
+            <img src="part_4.png" alt="Part 4">
+        </div>
+    
+        <div class="tile" id="tile-5">
+            <img src="part_5.png" alt="Part 5">
+        </div>
+    
+        <div class="tile" id="tile-6">
+            <img src="part_6.png" alt="Part 6">
+        </div>
+    
+        <div class="tile" id="tile-7">
+            <img src="part_7.png" alt="Part 7">
+        </div>
+    
+        <div class="tile" id="tile-8">
+            <img src="part_8.png" alt="Part 8">
+        </div>
+    
+        <div class="tile" id="tile-9">
+            <img src="part_9.png" alt="Part 9">
+        </div>
+    
+        <div class="tile" id="tile-10">
+            <img src="part_10.png" alt="Part 10">
+        </div>
+    
+        <div class="tile" id="tile-11">
+            <img src="part_11.png" alt="Part 11">
+        </div>
+    
+        <div class="tile" id="tile-12">
+            <img src="part_12.png" alt="Part 12">
+        </div>
+    
+        <div class="tile" id="tile-13">
+            <img src="part_13.png" alt="Part 13">
+        </div>
+    
+        <div class="tile" id="tile-14">
+            <img src="part_14.png" alt="Part 14">
+        </div>
+    
+        <div class="tile" id="tile-15">
+            <img src="part_15.png" alt="Part 15">
+        </div>
+    
+        <div class="tile" id="tile-16">
+            <img src="part_16.png" alt="Part 16">
+        </div>
+    
+        <div class="tile" id="tile-17">
+            <img src="part_17.png" alt="Part 17">
+        </div>
+    
+        <div class="tile" id="tile-18">
+            <img src="part_18.png" alt="Part 18">
+        </div>
+    
+        <div class="tile" id="tile-19">
+            <img src="part_19.png" alt="Part 19">
+        </div>
+    
+        <div class="tile" id="tile-20">
+            <img src="part_20.png" alt="Part 20">
+        </div>
+    
+        <div class="tile" id="tile-21">
+            <img src="part_21.png" alt="Part 21">
+        </div>
+    
+        <div class="tile" id="tile-22">
+            <img src="part_22.png" alt="Part 22">
+        </div>
+    
+        <div class="tile" id="tile-23">
+            <img src="part_23.png" alt="Part 23">
+        </div>
+    
+        <div class="tile" id="tile-24">
+            <img src="part_24.png" alt="Part 24">
+        </div>
+    
+        <div class="tile" id="tile-25">
+            <img src="part_25.png" alt="Part 25">
+        </div>
+    
+        <div class="tile" id="tile-26">
+            <img src="part_26.png" alt="Part 26">
+        </div>
+    
+        <div class="tile" id="tile-27">
+            <img src="part_27.png" alt="Part 27">
+        </div>
+    
+        <div class="tile" id="tile-28">
+            <img src="part_28.png" alt="Part 28">
+        </div>
+    
+        <div class="tile" id="tile-29">
+            <img src="part_29.png" alt="Part 29">
+        </div>
+    
+        <div class="tile" id="tile-30">
+            <img src="part_30.png" alt="Part 30">
+        </div>
+    
+        <div class="tile" id="tile-31">
+            <img src="part_31.png" alt="Part 31">
+        </div>
+    
+        <div class="tile" id="tile-32">
+            <img src="part_32.png" alt="Part 32">
+        </div>
+    
+        <div class="tile" id="tile-33">
+            <img src="part_33.png" alt="Part 33">
+        </div>
+    
+        <div class="tile" id="tile-34">
+            <img src="part_34.png" alt="Part 34">
+        </div>
+    
+        <div class="tile" id="tile-35">
+            <img src="part_35.png" alt="Part 35">
+        </div>
+    
+        <div class="tile" id="tile-36">
+            <img src="part_36.png" alt="Part 36">
+        </div>
+    
+        <div class="tile" id="tile-37">
+            <img src="part_37.png" alt="Part 37">
+        </div>
+    
+        <div class="tile" id="tile-38">
+            <img src="part_38.png" alt="Part 38">
+        </div>
+    
+        <div class="tile" id="tile-39">
+            <img src="part_39.png" alt="Part 39">
+        </div>
+    
+        <div class="tile" id="tile-40">
+            <img src="part_40.png" alt="Part 40">
+        </div>
+    
+        <div class="tile" id="tile-41">
+            <img src="part_41.png" alt="Part 41">
+        </div>
+    
+        <div class="tile" id="tile-42">
+            <img src="part_42.png" alt="Part 42">
+        </div>
+    
+        <div class="tile" id="tile-43">
+            <img src="part_43.png" alt="Part 43">
+        </div>
+    
+        <div class="tile" id="tile-44">
+            <img src="part_44.png" alt="Part 44">
+        </div>
+    
+        <div class="tile" id="tile-45">
+            <img src="part_45.png" alt="Part 45">
+        </div>
+    
+        <div class="tile" id="tile-46">
+            <img src="part_46.png" alt="Part 46">
+        </div>
+    
+        <div class="tile" id="tile-47">
+            <img src="part_47.png" alt="Part 47">
+        </div>
+    
+        <div class="tile" id="tile-48">
+            <img src="part_48.png" alt="Part 48">
+        </div>
+    
+        <div class="tile" id="tile-49">
+            <img src="part_49.png" alt="Part 49">
+        </div>
+    
+        <div class="tile" id="tile-50">
+            <img src="part_50.png" alt="Part 50">
+        </div>
+    
+        <div class="tile" id="tile-51">
+            <img src="part_51.png" alt="Part 51">
+        </div>
+    
+        <div class="tile" id="tile-52">
+            <img src="part_52.png" alt="Part 52">
+        </div>
+    
+        <div class="tile" id="tile-53">
+            <img src="part_53.png" alt="Part 53">
+        </div>
+    
+        <div class="tile" id="tile-54">
+            <img src="part_54.png" alt="Part 54">
+        </div>
+    
+        <div class="tile" id="tile-55">
+            <img src="part_55.png" alt="Part 55">
+        </div>
+    
+        <div class="tile" id="tile-56">
+            <img src="part_56.png" alt="Part 56">
+        </div>
+    
+        <div class="tile" id="tile-57">
+            <img src="part_57.png" alt="Part 57">
+        </div>
+    
+        <div class="tile" id="tile-58">
+            <img src="part_58.png" alt="Part 58">
+        </div>
+    
+        <div class="tile" id="tile-59">
+            <img src="part_59.png" alt="Part 59">
+        </div>
+    
+        <div class="tile" id="tile-60">
+            <img src="part_60.png" alt="Part 60">
+        </div>
+    
+        <div class="tile" id="tile-61">
+            <img src="part_61.png" alt="Part 61">
+        </div>
+    
+        <div class="tile" id="tile-62">
+            <img src="part_62.png" alt="Part 62">
+        </div>
+    
+        <div class="tile" id="tile-63">
+            <img src="part_63.png" alt="Part 63">
+        </div>
+    
+        <div class="tile" id="tile-64">
+            <img src="part_64.png" alt="Part 64">
+        </div>
+    
+        <div class="tile" id="tile-65">
+            <img src="part_65.png" alt="Part 65">
+        </div>
+    
+        <div class="tile" id="tile-66">
+            <img src="part_66.png" alt="Part 66">
+        </div>
+    
+        <div class="tile" id="tile-67">
+            <img src="part_67.png" alt="Part 67">
+        </div>
+    
+        <div class="tile" id="tile-68">
+            <img src="part_68.png" alt="Part 68">
+        </div>
+    
+        <div class="tile" id="tile-69">
+            <img src="part_69.png" alt="Part 69">
+        </div>
+    
+        <div class="tile" id="tile-70">
+            <img src="part_70.png" alt="Part 70">
+        </div>
+    
+        <div class="tile" id="tile-71">
+            <img src="part_71.png" alt="Part 71">
+        </div>
+    
+        <div class="tile" id="tile-72">
+            <img src="part_72.png" alt="Part 72">
+        </div>
+    
+        <div class="tile" id="tile-73">
+            <img src="part_73.png" alt="Part 73">
+        </div>
+    
+        <div class="tile" id="tile-74">
+            <img src="part_74.png" alt="Part 74">
+        </div>
+    
+        <div class="tile" id="tile-75">
+            <img src="part_75.png" alt="Part 75">
+        </div>
+    
+        <div class="tile" id="tile-76">
+            <img src="part_76.png" alt="Part 76">
+        </div>
+    
+        <div class="tile" id="tile-77">
+            <img src="part_77.png" alt="Part 77">
+        </div>
+    
+        <div class="tile" id="tile-78">
+            <img src="part_78.png" alt="Part 78">
+        </div>
+    
+        <div class="tile" id="tile-79">
+            <img src="part_79.png" alt="Part 79">
+        </div>
+    
+        <div class="tile" id="tile-80">
+            <img src="part_80.png" alt="Part 80">
+        </div>
+    
+        <div class="tile" id="tile-81">
+            <img src="part_81.png" alt="Part 81">
+        </div>
+    
+        <div class="tile" id="tile-82">
+            <img src="part_82.png" alt="Part 82">
+        </div>
+    
+        <div class="tile" id="tile-83">
+            <img src="part_83.png" alt="Part 83">
+        </div>
+    
+        <div class="tile" id="tile-84">
+            <img src="part_84.png" alt="Part 84">
+        </div>
+    
+        <div class="tile" id="tile-85">
+            <img src="part_85.png" alt="Part 85">
+        </div>
+    
+        <div class="tile" id="tile-86">
+            <img src="part_86.png" alt="Part 86">
+        </div>
+    
+        <div class="tile" id="tile-87">
+            <img src="part_87.png" alt="Part 87">
+        </div>
+    
+        <div class="tile" id="tile-88">
+            <img src="part_88.png" alt="Part 88">
+        </div>
+    
+        <div class="tile" id="tile-89">
+            <img src="part_89.png" alt="Part 89">
+        </div>
+    
+        <div class="tile" id="tile-90">
+            <img src="part_90.png" alt="Part 90">
+        </div>
+    
+        <div class="tile" id="tile-91">
+            <img src="part_91.png" alt="Part 91">
+        </div>
+    
+        <div class="tile" id="tile-92">
+            <img src="part_92.png" alt="Part 92">
+        </div>
+    
+        <div class="tile" id="tile-93">
+            <img src="part_93.png" alt="Part 93">
+        </div>
+    
+        <div class="tile" id="tile-94">
+            <img src="part_94.png" alt="Part 94">
+        </div>
+    
+        <div class="tile" id="tile-95">
+            <img src="part_95.png" alt="Part 95">
+        </div>
+    
+        <div class="tile" id="tile-96">
+            <img src="part_96.png" alt="Part 96">
+        </div>
+    
+        <div class="tile" id="tile-97">
+            <img src="part_97.png" alt="Part 97">
+        </div>
+    
+        <div class="tile" id="tile-98">
+            <img src="part_98.png" alt="Part 98">
+        </div>
+    
+        <div class="tile" id="tile-99">
+            <img src="part_99.png" alt="Part 99">
+        </div>
+    
+        <div class="tile" id="tile-100">
+            <img src="part_100.png" alt="Part 100">
+        </div>
+    
+        <div class="tile" id="tile-101">
+            <img src="part_101.png" alt="Part 101">
+        </div>
+    
+        <div class="tile" id="tile-102">
+            <img src="part_102.png" alt="Part 102">
+        </div>
+    
+        <div class="tile" id="tile-103">
+            <img src="part_103.png" alt="Part 103">
+        </div>
+    
+        <div class="tile" id="tile-104">
+            <img src="part_104.png" alt="Part 104">
+        </div>
+    
+        <div class="tile" id="tile-105">
+            <img src="part_105.png" alt="Part 105">
+        </div>
+    
+        <div class="tile" id="tile-106">
+            <img src="part_106.png" alt="Part 106">
+        </div>
+    
+        <div class="tile" id="tile-107">
+            <img src="part_107.png" alt="Part 107">
+        </div>
+    
+        <div class="tile" id="tile-108">
+            <img src="part_108.png" alt="Part 108">
+        </div>
+    
+        <div class="tile" id="tile-109">
+            <img src="part_109.png" alt="Part 109">
+        </div>
+    
+        <div class="tile" id="tile-110">
+            <img src="part_110.png" alt="Part 110">
+        </div>
+    
+        <div class="tile" id="tile-111">
+            <img src="part_111.png" alt="Part 111">
+        </div>
+    
+        <div class="tile" id="tile-112">
+            <img src="part_112.png" alt="Part 112">
+        </div>
+    
+        <div class="tile" id="tile-113">
+            <img src="part_113.png" alt="Part 113">
+        </div>
+    
+        <div class="tile" id="tile-114">
+            <img src="part_114.png" alt="Part 114">
+        </div>
+    
+        <div class="tile" id="tile-115">
+            <img src="part_115.png" alt="Part 115">
+        </div>
+    
+        <div class="tile" id="tile-116">
+            <img src="part_116.png" alt="Part 116">
+        </div>
+    
+        <div class="tile" id="tile-117">
+            <img src="part_117.png" alt="Part 117">
+        </div>
+    
+        <div class="tile" id="tile-118">
+            <img src="part_118.png" alt="Part 118">
+        </div>
+    
+        <div class="tile" id="tile-119">
+            <img src="part_119.png" alt="Part 119">
+        </div>
+    
+        <div class="tile" id="tile-120">
+            <img src="part_120.png" alt="Part 120">
+        </div>
+    
+        <div class="tile" id="tile-121">
+            <img src="part_121.png" alt="Part 121">
+        </div>
+    
+        <div class="tile" id="tile-122">
+            <img src="part_122.png" alt="Part 122">
+        </div>
+    
+        <div class="tile" id="tile-123">
+            <img src="part_123.png" alt="Part 123">
+        </div>
+    
+        <div class="tile" id="tile-124">
+            <img src="part_124.png" alt="Part 124">
+        </div>
+    
+        <div class="tile" id="tile-125">
+            <img src="part_125.png" alt="Part 125">
+        </div>
+    
+        <div class="tile" id="tile-126">
+            <img src="part_126.png" alt="Part 126">
+        </div>
+    
+        <div class="tile" id="tile-127">
+            <img src="part_127.png" alt="Part 127">
+        </div>
+    
+        <div class="tile" id="tile-128">
+            <img src="part_128.png" alt="Part 128">
+        </div>
+    
+        <div class="tile" id="tile-129">
+            <img src="part_129.png" alt="Part 129">
+        </div>
+    
+        <div class="tile" id="tile-130">
+            <img src="part_130.png" alt="Part 130">
+        </div>
+    
+        <div class="tile" id="tile-131">
+            <img src="part_131.png" alt="Part 131">
+        </div>
+    
+        <div class="tile" id="tile-132">
+            <img src="part_132.png" alt="Part 132">
+        </div>
+    
+        <div class="tile" id="tile-133">
+            <img src="part_133.png" alt="Part 133">
+        </div>
+    
+        <div class="tile" id="tile-134">
+            <img src="part_134.png" alt="Part 134">
+        </div>
+    
+        <div class="tile" id="tile-135">
+            <img src="part_135.png" alt="Part 135">
+        </div>
+    
+        <div class="tile" id="tile-136">
+            <img src="part_136.png" alt="Part 136">
+        </div>
+    
+        <div class="tile" id="tile-137">
+            <img src="part_137.png" alt="Part 137">
+        </div>
+    
+        <div class="tile" id="tile-138">
+            <img src="part_138.png" alt="Part 138">
+        </div>
+    
+        <div class="tile" id="tile-139">
+            <img src="part_139.png" alt="Part 139">
+        </div>
+    
+        <div class="tile" id="tile-140">
+            <img src="part_140.png" alt="Part 140">
+        </div>
+    
+        <div class="tile" id="tile-141">
+            <img src="part_141.png" alt="Part 141">
+        </div>
+    
+        <div class="tile" id="tile-142">
+            <img src="part_142.png" alt="Part 142">
+        </div>
+    
+        <div class="tile" id="tile-143">
+            <img src="part_143.png" alt="Part 143">
+        </div>
+    
+        <div class="tile" id="tile-144">
+            <img src="part_144.png" alt="Part 144">
+        </div>
+    
+        <div class="tile" id="tile-145">
+            <img src="part_145.png" alt="Part 145">
+        </div>
+    
+        <div class="tile" id="tile-146">
+            <img src="part_146.png" alt="Part 146">
+        </div>
+    
+        <div class="tile" id="tile-147">
+            <img src="part_147.png" alt="Part 147">
+        </div>
+    
+        <div class="tile" id="tile-148">
+            <img src="part_148.png" alt="Part 148">
+        </div>
+    
+        <div class="tile" id="tile-149">
+            <img src="part_149.png" alt="Part 149">
+        </div>
+    
+        <div class="tile" id="tile-150">
+            <img src="part_150.png" alt="Part 150">
+        </div>
+    
+        <div class="tile" id="tile-151">
+            <img src="part_151.png" alt="Part 151">
+        </div>
+    
+        <div class="tile" id="tile-152">
+            <img src="part_152.png" alt="Part 152">
+        </div>
+    
+        <div class="tile" id="tile-153">
+            <img src="part_153.png" alt="Part 153">
+        </div>
+    
+        <div class="tile" id="tile-154">
+            <img src="part_154.png" alt="Part 154">
+        </div>
+    
+        <div class="tile" id="tile-155">
+            <img src="part_155.png" alt="Part 155">
+        </div>
+    
+        <div class="tile" id="tile-156">
+            <img src="part_156.png" alt="Part 156">
+        </div>
+    
+        <div class="tile" id="tile-157">
+            <img src="part_157.png" alt="Part 157">
+        </div>
+    
+        <div class="tile" id="tile-158">
+            <img src="part_158.png" alt="Part 158">
+        </div>
+    
+        <div class="tile" id="tile-159">
+            <img src="part_159.png" alt="Part 159">
+        </div>
+    
+        <div class="tile" id="tile-160">
+            <img src="part_160.png" alt="Part 160">
+        </div>
+    
+        <div class="tile" id="tile-161">
+            <img src="part_161.png" alt="Part 161">
+        </div>
+    
+        <div class="tile" id="tile-162">
+            <img src="part_162.png" alt="Part 162">
+        </div>
+    
+        <div class="tile" id="tile-163">
+            <img src="part_163.png" alt="Part 163">
+        </div>
+    
+        <div class="tile" id="tile-164">
+            <img src="part_164.png" alt="Part 164">
+        </div>
+    
+        <div class="tile" id="tile-165">
+            <img src="part_165.png" alt="Part 165">
+        </div>
+    
+        <div class="tile" id="tile-166">
+            <img src="part_166.png" alt="Part 166">
+        </div>
+    
+        <div class="tile" id="tile-167">
+            <img src="part_167.png" alt="Part 167">
+        </div>
+    
+        <div class="tile" id="tile-168">
+            <img src="part_168.png" alt="Part 168">
+        </div>
+    
+        <div class="tile" id="tile-169">
+            <img src="part_169.png" alt="Part 169">
+        </div>
+    
+        <div class="tile" id="tile-170">
+            <img src="part_170.png" alt="Part 170">
+        </div>
+    
+        <div class="tile" id="tile-171">
+            <img src="part_171.png" alt="Part 171">
+        </div>
+    
+        <div class="tile" id="tile-172">
+            <img src="part_172.png" alt="Part 172">
+        </div>
+    
+        <div class="tile" id="tile-173">
+            <img src="part_173.png" alt="Part 173">
+        </div>
+    
+        <div class="tile" id="tile-174">
+            <img src="part_174.png" alt="Part 174">
+        </div>
+    
+        <div class="tile" id="tile-175">
+            <img src="part_175.png" alt="Part 175">
+        </div>
+    
+        <div class="tile" id="tile-176">
+            <img src="part_176.png" alt="Part 176">
+        </div>
+    
+        <div class="tile" id="tile-177">
+            <img src="part_177.png" alt="Part 177">
+        </div>
+    
+        <div class="tile" id="tile-178">
+            <img src="part_178.png" alt="Part 178">
+        </div>
+    
+        <div class="tile" id="tile-179">
+            <img src="part_179.png" alt="Part 179">
+        </div>
+    
+        <div class="tile" id="tile-180">
+            <img src="part_180.png" alt="Part 180">
+        </div>
+    
+        <div class="tile" id="tile-181">
+            <img src="part_181.png" alt="Part 181">
+        </div>
+    
+        <div class="tile" id="tile-182">
+            <img src="part_182.png" alt="Part 182">
+        </div>
+    
+        <div class="tile" id="tile-183">
+            <img src="part_183.png" alt="Part 183">
+        </div>
+    
+        <div class="tile" id="tile-184">
+            <img src="part_184.png" alt="Part 184">
+        </div>
+    
+        <div class="tile" id="tile-185">
+            <img src="part_185.png" alt="Part 185">
+        </div>
+    
+        <div class="tile" id="tile-186">
+            <img src="part_186.png" alt="Part 186">
+        </div>
+    
+        <div class="tile" id="tile-187">
+            <img src="part_187.png" alt="Part 187">
+        </div>
+    
+        <div class="tile" id="tile-188">
+            <img src="part_188.png" alt="Part 188">
+        </div>
+    
+        <div class="tile" id="tile-189">
+            <img src="part_189.png" alt="Part 189">
+        </div>
+    
+        <div class="tile" id="tile-190">
+            <img src="part_190.png" alt="Part 190">
+        </div>
+    
+        <div class="tile" id="tile-191">
+            <img src="part_191.png" alt="Part 191">
+        </div>
+    
+        <div class="tile" id="tile-192">
+            <img src="part_192.png" alt="Part 192">
+        </div>
+    
+        <div class="tile" id="tile-193">
+            <img src="part_193.png" alt="Part 193">
+        </div>
+    
+        <div class="tile" id="tile-194">
+            <img src="part_194.png" alt="Part 194">
+        </div>
+    
+        <div class="tile" id="tile-195">
+            <img src="part_195.png" alt="Part 195">
+        </div>
+    
+        <div class="tile" id="tile-196">
+            <img src="part_196.png" alt="Part 196">
+        </div>
+    
+        <div class="tile" id="tile-197">
+            <img src="part_197.png" alt="Part 197">
+        </div>
+    
+        <div class="tile" id="tile-198">
+            <img src="part_198.png" alt="Part 198">
+        </div>
+    
+        <div class="tile" id="tile-199">
+            <img src="part_199.png" alt="Part 199">
+        </div>
+    
+        <div class="tile" id="tile-200">
+            <img src="part_200.png" alt="Part 200">
+        </div>
+    
+        <div class="tile" id="tile-201">
+            <img src="part_201.png" alt="Part 201">
+        </div>
+    
+        <div class="tile" id="tile-202">
+            <img src="part_202.png" alt="Part 202">
+        </div>
+    
+        <div class="tile" id="tile-203">
+            <img src="part_203.png" alt="Part 203">
+        </div>
+    
+        <div class="tile" id="tile-204">
+            <img src="part_204.png" alt="Part 204">
+        </div>
+    
+        <div class="tile" id="tile-205">
+            <img src="part_205.png" alt="Part 205">
+        </div>
+    
+        <div class="tile" id="tile-206">
+            <img src="part_206.png" alt="Part 206">
+        </div>
+    
+        <div class="tile" id="tile-207">
+            <img src="part_207.png" alt="Part 207">
+        </div>
+    
+        <div class="tile" id="tile-208">
+            <img src="part_208.png" alt="Part 208">
+        </div>
+    
+        <div class="tile" id="tile-209">
+            <img src="part_209.png" alt="Part 209">
+        </div>
+    
+        <div class="tile" id="tile-210">
+            <img src="part_210.png" alt="Part 210">
+        </div>
+    
+        <div class="tile" id="tile-211">
+            <img src="part_211.png" alt="Part 211">
+        </div>
+    
+        <div class="tile" id="tile-212">
+            <img src="part_212.png" alt="Part 212">
+        </div>
+    
+        <div class="tile" id="tile-213">
+            <img src="part_213.png" alt="Part 213">
+        </div>
+    
+        <div class="tile" id="tile-214">
+            <img src="part_214.png" alt="Part 214">
+        </div>
+    
+        <div class="tile" id="tile-215">
+            <img src="part_215.png" alt="Part 215">
+        </div>
+    
+        <div class="tile" id="tile-216">
+            <img src="part_216.png" alt="Part 216">
+        </div>
+    
+        <div class="tile" id="tile-217">
+            <img src="part_217.png" alt="Part 217">
+        </div>
+    
+        <div class="tile" id="tile-218">
+            <img src="part_218.png" alt="Part 218">
+        </div>
+    
+        <div class="tile" id="tile-219">
+            <img src="part_219.png" alt="Part 219">
+        </div>
+    
+        <div class="tile" id="tile-220">
+            <img src="part_220.png" alt="Part 220">
+        </div>
+    
+        <div class="tile" id="tile-221">
+            <img src="part_221.png" alt="Part 221">
+        </div>
+    
+        <div class="tile" id="tile-222">
+            <img src="part_222.png" alt="Part 222">
+        </div>
+    
+        <div class="tile" id="tile-223">
+            <img src="part_223.png" alt="Part 223">
+        </div>
+    
+        <div class="tile" id="tile-224">
+            <img src="part_224.png" alt="Part 224">
+        </div>
+    
+        <div class="tile" id="tile-225">
+            <img src="part_225.png" alt="Part 225">
+        </div>
+    
+        <div class="tile" id="tile-226">
+            <img src="part_226.png" alt="Part 226">
+        </div>
+    
+        <div class="tile" id="tile-227">
+            <img src="part_227.png" alt="Part 227">
+        </div>
+    
+        <div class="tile" id="tile-228">
+            <img src="part_228.png" alt="Part 228">
+        </div>
+    
+        <div class="tile" id="tile-229">
+            <img src="part_229.png" alt="Part 229">
+        </div>
+    
+        <div class="tile" id="tile-230">
+            <img src="part_230.png" alt="Part 230">
+        </div>
+    
+        <div class="tile" id="tile-231">
+            <img src="part_231.png" alt="Part 231">
+        </div>
+    
+        <div class="tile" id="tile-232">
+            <img src="part_232.png" alt="Part 232">
+        </div>
+    
+        <div class="tile" id="tile-233">
+            <img src="part_233.png" alt="Part 233">
+        </div>
+    
+        <div class="tile" id="tile-234">
+            <img src="part_234.png" alt="Part 234">
+        </div>
+    
+        <div class="tile" id="tile-235">
+            <img src="part_235.png" alt="Part 235">
+        </div>
+    
+        <div class="tile" id="tile-236">
+            <img src="part_236.png" alt="Part 236">
+        </div>
+    
+        <div class="tile" id="tile-237">
+            <img src="part_237.png" alt="Part 237">
+        </div>
+    
+        <div class="tile" id="tile-238">
+            <img src="part_238.png" alt="Part 238">
+        </div>
+    
+        <div class="tile" id="tile-239">
+            <img src="part_239.png" alt="Part 239">
+        </div>
+    
+        <div class="tile" id="tile-240">
+            <img src="part_240.png" alt="Part 240">
+        </div>
+    
+        <div class="tile" id="tile-241">
+            <img src="part_241.png" alt="Part 241">
+        </div>
+    
+        <div class="tile" id="tile-242">
+            <img src="part_242.png" alt="Part 242">
+        </div>
+    
+        <div class="tile" id="tile-243">
+            <img src="part_243.png" alt="Part 243">
+        </div>
+    
+        <div class="tile" id="tile-244">
+            <img src="part_244.png" alt="Part 244">
+        </div>
+    
+        <div class="tile" id="tile-245">
+            <img src="part_245.png" alt="Part 245">
+        </div>
+    
+        <div class="tile" id="tile-246">
+            <img src="part_246.png" alt="Part 246">
+        </div>
+    
+        <div class="tile" id="tile-247">
+            <img src="part_247.png" alt="Part 247">
+        </div>
+    
+        <div class="tile" id="tile-248">
+            <img src="part_248.png" alt="Part 248">
+        </div>
+    
+        <div class="tile" id="tile-249">
+            <img src="part_249.png" alt="Part 249">
+        </div>
+    
+        <div class="tile" id="tile-250">
+            <img src="part_250.png" alt="Part 250">
+        </div>
+    
+        <div class="tile" id="tile-251">
+            <img src="part_251.png" alt="Part 251">
+        </div>
+    
+        <div class="tile" id="tile-252">
+            <img src="part_252.png" alt="Part 252">
+        </div>
+    
+        <div class="tile" id="tile-253">
+            <img src="part_253.png" alt="Part 253">
+        </div>
+    
+        <div class="tile" id="tile-254">
+            <img src="part_254.png" alt="Part 254">
+        </div>
+    
+        <div class="tile" id="tile-255">
+            <img src="part_255.png" alt="Part 255">
+        </div>
+    
+        <div class="tile" id="tile-256">
+            <img src="part_256.png" alt="Part 256">
+        </div>
+    
+        <div class="tile" id="tile-257">
+            <img src="part_257.png" alt="Part 257">
+        </div>
+    
+        <div class="tile" id="tile-258">
+            <img src="part_258.png" alt="Part 258">
+        </div>
+    
+        <div class="tile" id="tile-259">
+            <img src="part_259.png" alt="Part 259">
+        </div>
+    
+        <div class="tile" id="tile-260">
+            <img src="part_260.png" alt="Part 260">
+        </div>
+    
+        <div class="tile" id="tile-261">
+            <img src="part_261.png" alt="Part 261">
+        </div>
+    
+        <div class="tile" id="tile-262">
+            <img src="part_262.png" alt="Part 262">
+        </div>
+    
+        <div class="tile" id="tile-263">
+            <img src="part_263.png" alt="Part 263">
+        </div>
+    
+        <div class="tile" id="tile-264">
+            <img src="part_264.png" alt="Part 264">
+        </div>
+    
+        <div class="tile" id="tile-265">
+            <img src="part_265.png" alt="Part 265">
+        </div>
+    
+        <div class="tile" id="tile-266">
+            <img src="part_266.png" alt="Part 266">
+        </div>
+    
+        <div class="tile" id="tile-267">
+            <img src="part_267.png" alt="Part 267">
+        </div>
+    
+        <div class="tile" id="tile-268">
+            <img src="part_268.png" alt="Part 268">
+        </div>
+    
+        <div class="tile" id="tile-269">
+            <img src="part_269.png" alt="Part 269">
+        </div>
+    
+        <div class="tile" id="tile-270">
+            <img src="part_270.png" alt="Part 270">
+        </div>
+    
+        <div class="tile" id="tile-271">
+            <img src="part_271.png" alt="Part 271">
+        </div>
+    
+        <div class="tile" id="tile-272">
+            <img src="part_272.png" alt="Part 272">
+        </div>
+    
+        <div class="tile" id="tile-273">
+            <img src="part_273.png" alt="Part 273">
+        </div>
+    
+        <div class="tile" id="tile-274">
+            <img src="part_274.png" alt="Part 274">
+        </div>
+    
+        <div class="tile" id="tile-275">
+            <img src="part_275.png" alt="Part 275">
+        </div>
+    
+        <div class="tile" id="tile-276">
+            <img src="part_276.png" alt="Part 276">
+        </div>
+    
+        <div class="tile" id="tile-277">
+            <img src="part_277.png" alt="Part 277">
+        </div>
+    
+        <div class="tile" id="tile-278">
+            <img src="part_278.png" alt="Part 278">
+        </div>
+    
+        <div class="tile" id="tile-279">
+            <img src="part_279.png" alt="Part 279">
+        </div>
+    
+        <div class="tile" id="tile-280">
+            <img src="part_280.png" alt="Part 280">
+        </div>
+    
+        <div class="tile" id="tile-281">
+            <img src="part_281.png" alt="Part 281">
+        </div>
+    
+        <div class="tile" id="tile-282">
+            <img src="part_282.png" alt="Part 282">
+        </div>
+    
+        <div class="tile" id="tile-283">
+            <img src="part_283.png" alt="Part 283">
+        </div>
+    
+        <div class="tile" id="tile-284">
+            <img src="part_284.png" alt="Part 284">
+        </div>
+    
+        <div class="tile" id="tile-285">
+            <img src="part_285.png" alt="Part 285">
+        </div>
+    
+        <div class="tile" id="tile-286">
+            <img src="part_286.png" alt="Part 286">
+        </div>
+    
+        <div class="tile" id="tile-287">
+            <img src="part_287.png" alt="Part 287">
+        </div>
+    
+        <div class="tile" id="tile-288">
+            <img src="part_288.png" alt="Part 288">
+        </div>
+    
+        <div class="tile" id="tile-289">
+            <img src="part_289.png" alt="Part 289">
+        </div>
+    
+        <div class="tile" id="tile-290">
+            <img src="part_290.png" alt="Part 290">
+        </div>
+    
+        <div class="tile" id="tile-291">
+            <img src="part_291.png" alt="Part 291">
+        </div>
+    
+        <div class="tile" id="tile-292">
+            <img src="part_292.png" alt="Part 292">
+        </div>
+    
+        <div class="tile" id="tile-293">
+            <img src="part_293.png" alt="Part 293">
+        </div>
+    
+        <div class="tile" id="tile-294">
+            <img src="part_294.png" alt="Part 294">
+        </div>
+    
+        <div class="tile" id="tile-295">
+            <img src="part_295.png" alt="Part 295">
+        </div>
+    
+        <div class="tile" id="tile-296">
+            <img src="part_296.png" alt="Part 296">
+        </div>
+    
+        <div class="tile" id="tile-297">
+            <img src="part_297.png" alt="Part 297">
+        </div>
+    
+        <div class="tile" id="tile-298">
+            <img src="part_298.png" alt="Part 298">
+        </div>
+    
+        <div class="tile" id="tile-299">
+            <img src="part_299.png" alt="Part 299">
+        </div>
+    
+        <div class="tile" id="tile-300">
+            <img src="part_300.png" alt="Part 300">
+        </div>
+    
+        <div class="tile" id="tile-301">
+            <img src="part_301.png" alt="Part 301">
+        </div>
+    
+        <div class="tile" id="tile-302">
+            <img src="part_302.png" alt="Part 302">
+        </div>
+    
+        <div class="tile" id="tile-303">
+            <img src="part_303.png" alt="Part 303">
+        </div>
+    
+        <div class="tile" id="tile-304">
+            <img src="part_304.png" alt="Part 304">
+        </div>
+    
+        <div class="tile" id="tile-305">
+            <img src="part_305.png" alt="Part 305">
+        </div>
+    
+        <div class="tile" id="tile-306">
+            <img src="part_306.png" alt="Part 306">
+        </div>
+    
+        <div class="tile" id="tile-307">
+            <img src="part_307.png" alt="Part 307">
+        </div>
+    
+        <div class="tile" id="tile-308">
+            <img src="part_308.png" alt="Part 308">
+        </div>
+    
+        <div class="tile" id="tile-309">
+            <img src="part_309.png" alt="Part 309">
+        </div>
+    
+        <div class="tile" id="tile-310">
+            <img src="part_310.png" alt="Part 310">
+        </div>
+    
+        <div class="tile" id="tile-311">
+            <img src="part_311.png" alt="Part 311">
+        </div>
+    
+        <div class="tile" id="tile-312">
+            <img src="part_312.png" alt="Part 312">
+        </div>
+    
+        <div class="tile" id="tile-313">
+            <img src="part_313.png" alt="Part 313">
+        </div>
+    
+        <div class="tile" id="tile-314">
+            <img src="part_314.png" alt="Part 314">
+        </div>
+    
+        <div class="tile" id="tile-315">
+            <img src="part_315.png" alt="Part 315">
+        </div>
+    
+        <div class="tile" id="tile-316">
+            <img src="part_316.png" alt="Part 316">
+        </div>
+    
+        <div class="tile" id="tile-317">
+            <img src="part_317.png" alt="Part 317">
+        </div>
+    
+        <div class="tile" id="tile-318">
+            <img src="part_318.png" alt="Part 318">
+        </div>
+    
+        <div class="tile" id="tile-319">
+            <img src="part_319.png" alt="Part 319">
+        </div>
+    
+        <div class="tile" id="tile-320">
+            <img src="part_320.png" alt="Part 320">
+        </div>
+    
+        <div class="tile" id="tile-321">
+            <img src="part_321.png" alt="Part 321">
+        </div>
+    
+        <div class="tile" id="tile-322">
+            <img src="part_322.png" alt="Part 322">
+        </div>
+    
+        <div class="tile" id="tile-323">
+            <img src="part_323.png" alt="Part 323">
+        </div>
+    
+        <div class="tile" id="tile-324">
+            <img src="part_324.png" alt="Part 324">
+        </div>
+    
+        <div class="tile" id="tile-325">
+            <img src="part_325.png" alt="Part 325">
+        </div>
+    
+        <div class="tile" id="tile-326">
+            <img src="part_326.png" alt="Part 326">
+        </div>
+    
+        <div class="tile" id="tile-327">
+            <img src="part_327.png" alt="Part 327">
+        </div>
+    
+        <div class="tile" id="tile-328">
+            <img src="part_328.png" alt="Part 328">
+        </div>
+    
+        <div class="tile" id="tile-329">
+            <img src="part_329.png" alt="Part 329">
+        </div>
+    
+        <div class="tile" id="tile-330">
+            <img src="part_330.png" alt="Part 330">
+        </div>
+    
+        <div class="tile" id="tile-331">
+            <img src="part_331.png" alt="Part 331">
+        </div>
+    
+        <div class="tile" id="tile-332">
+            <img src="part_332.png" alt="Part 332">
+        </div>
+    
+        <div class="tile" id="tile-333">
+            <img src="part_333.png" alt="Part 333">
+        </div>
+    
+        <div class="tile" id="tile-334">
+            <img src="part_334.png" alt="Part 334">
+        </div>
+    
+        <div class="tile" id="tile-335">
+            <img src="part_335.png" alt="Part 335">
+        </div>
+    
+        <div class="tile" id="tile-336">
+            <img src="part_336.png" alt="Part 336">
+        </div>
+    
+        <div class="tile" id="tile-337">
+            <img src="part_337.png" alt="Part 337">
+        </div>
+    
+        <div class="tile" id="tile-338">
+            <img src="part_338.png" alt="Part 338">
+        </div>
+    
+        <div class="tile" id="tile-339">
+            <img src="part_339.png" alt="Part 339">
+        </div>
+    
+        <div class="tile" id="tile-340">
+            <img src="part_340.png" alt="Part 340">
+        </div>
+    
+        <div class="tile" id="tile-341">
+            <img src="part_341.png" alt="Part 341">
+        </div>
+    
+        <div class="tile" id="tile-342">
+            <img src="part_342.png" alt="Part 342">
+        </div>
+    
+        <div class="tile" id="tile-343">
+            <img src="part_343.png" alt="Part 343">
+        </div>
+    
+        <div class="tile" id="tile-344">
+            <img src="part_344.png" alt="Part 344">
+        </div>
+    
+        <div class="tile" id="tile-345">
+            <img src="part_345.png" alt="Part 345">
+        </div>
+    
+        <div class="tile" id="tile-346">
+            <img src="part_346.png" alt="Part 346">
+        </div>
+    
+        <div class="tile" id="tile-347">
+            <img src="part_347.png" alt="Part 347">
+        </div>
+    
+        <div class="tile" id="tile-348">
+            <img src="part_348.png" alt="Part 348">
+        </div>
+    
+        <div class="tile" id="tile-349">
+            <img src="part_349.png" alt="Part 349">
+        </div>
+    
+        <div class="tile" id="tile-350">
+            <img src="part_350.png" alt="Part 350">
+        </div>
+    
+        <div class="tile" id="tile-351">
+            <img src="part_351.png" alt="Part 351">
+        </div>
+    
+        <div class="tile" id="tile-352">
+            <img src="part_352.png" alt="Part 352">
+        </div>
+    
+        <div class="tile" id="tile-353">
+            <img src="part_353.png" alt="Part 353">
+        </div>
+    
+        <div class="tile" id="tile-354">
+            <img src="part_354.png" alt="Part 354">
+        </div>
+    
+        <div class="tile" id="tile-355">
+            <img src="part_355.png" alt="Part 355">
+        </div>
+    
+        <div class="tile" id="tile-356">
+            <img src="part_356.png" alt="Part 356">
+        </div>
+    
+        <div class="tile" id="tile-357">
+            <img src="part_357.png" alt="Part 357">
+        </div>
+    
+        <div class="tile" id="tile-358">
+            <img src="part_358.png" alt="Part 358">
+        </div>
+    
+        <div class="tile" id="tile-359">
+            <img src="part_359.png" alt="Part 359">
+        </div>
+    
+        <div class="tile" id="tile-360">
+            <img src="part_360.png" alt="Part 360">
+        </div>
+    
+        <div class="tile" id="tile-361">
+            <img src="part_361.png" alt="Part 361">
+        </div>
+    
+        <div class="tile" id="tile-362">
+            <img src="part_362.png" alt="Part 362">
+        </div>
+    
+        <div class="tile" id="tile-363">
+            <img src="part_363.png" alt="Part 363">
+        </div>
+    
+        <div class="tile" id="tile-364">
+            <img src="part_364.png" alt="Part 364">
+        </div>
+    
+        <div class="tile" id="tile-365">
+            <img src="part_365.png" alt="Part 365">
+        </div>
+    
+        <div class="tile" id="tile-366">
+            <img src="part_366.png" alt="Part 366">
+        </div>
+    
+        <div class="tile" id="tile-367">
+            <img src="part_367.png" alt="Part 367">
+        </div>
+    
+        <div class="tile" id="tile-368">
+            <img src="part_368.png" alt="Part 368">
+        </div>
+    
+        <div class="tile" id="tile-369">
+            <img src="part_369.png" alt="Part 369">
+        </div>
+    
+        <div class="tile" id="tile-370">
+            <img src="part_370.png" alt="Part 370">
+        </div>
+    
+        <div class="tile" id="tile-371">
+            <img src="part_371.png" alt="Part 371">
+        </div>
+    
+        <div class="tile" id="tile-372">
+            <img src="part_372.png" alt="Part 372">
+        </div>
+    
+        <div class="tile" id="tile-373">
+            <img src="part_373.png" alt="Part 373">
+        </div>
+    
+        <div class="tile" id="tile-374">
+            <img src="part_374.png" alt="Part 374">
+        </div>
+    
+        <div class="tile" id="tile-375">
+            <img src="part_375.png" alt="Part 375">
+        </div>
+    
+        <div class="tile" id="tile-376">
+            <img src="part_376.png" alt="Part 376">
+        </div>
+    
+        <div class="tile" id="tile-377">
+            <img src="part_377.png" alt="Part 377">
+        </div>
+    
+        <div class="tile" id="tile-378">
+            <img src="part_378.png" alt="Part 378">
+        </div>
+    
+        <div class="tile" id="tile-379">
+            <img src="part_379.png" alt="Part 379">
+        </div>
+    
+        <div class="tile" id="tile-380">
+            <img src="part_380.png" alt="Part 380">
+        </div>
+    
+    </div>
+    <footer>
+        <p>&copy; 2024 - A gift inspired by the beauty of Middle-earth.</p>
+    </footer>
+    <script>
+        // Function to get URL parameters
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`);
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Load unlocked tiles from local storage
+        const unlockedTiles = JSON.parse(localStorage.getItem('unlockedTiles')) || [];
+
+        // Unlock tiles that were previously unlocked
+        unlockedTiles.forEach(tileId => {
+            const tile = document.getElementById(`tile-${tileId}`);
+            if (tile) {
+                const img = tile.querySelector('img');
+                if (img) {
+                    img.classList.add('visible');
+                }
+            }
+        });
+
+        // Unlock the tile based on the "tile" parameter
+        const tileId = getParameterByName('tile');
+        if (tileId && !unlockedTiles.includes(tileId)) {
+            unlockedTiles.push(tileId);
+            localStorage.setItem('unlockedTiles', JSON.stringify(unlockedTiles));
+
+            // Reveal the new tile
+            const tile = document.getElementById(`tile-${tileId}`);
+            if (tile) {
+                const img = tile.querySelector('img');
+                if (img) {
+                    img.classList.add('visible');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
