@@ -1,0 +1,2322 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Great Middle-earth Puzzle</title>
+<style>
+        body {
+            background-color: #2E2B23; /* Dark background like Middle-earth maps */
+            color: #E0D7C6; /* Parchment-style text */
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: #4A3C2E;
+        }
+        header h1 {
+            color: #F4EBC1;
+            font-size: 3em;
+            text-shadow: 3px 3px #4A3C2E;
+            margin-bottom: 10px;
+        }
+        header p {
+            color: #E0D7C6;
+            font-size: 1.2em;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(19, 1fr);
+            gap: 2px;
+            max-width: 95%;
+            margin: 20px auto;
+        }
+        .door {
+            background-color: #6B4226; /* Wooden door color */
+            border: 2px solid #8B5A2B; /* Door frame */
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            cursor: pointer;
+        }
+        .door span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #FFF5C3; /* Number color */
+            text-shadow: 1px 1px 2px #4A3C2E;
+        }
+        .tile img {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .tile img.visible {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4A3C2E;
+            color: #F4EBC1;
+        }
+    </style>
+</head>
+<body>
+<header>
+<h1>The Great Middle-earth Puzzle</h1>
+<p>A 380-day journey to unlock the hidden masterpiece</p>
+</header>
+<div class="image-container">
+<div class="tile" id="tile-1" style="position:relative;">
+<img alt="Part 1" src="part_1.png"/>
+<div class="door" data-correct-number="139" data-tile-id="1" onclick="prepareToUnlock(this)">
+<span>1</span>
+</div>
+</div>
+<div class="tile" id="tile-2" style="position:relative;">
+<img alt="Part 2" src="part_2.png"/>
+<div class="door" data-correct-number="10" data-tile-id="2" onclick="prepareToUnlock(this)">
+<span>2</span>
+</div>
+</div>
+<div class="tile" id="tile-3" style="position:relative;">
+<img alt="Part 3" src="part_3.png"/>
+<div class="door" data-correct-number="695" data-tile-id="3" onclick="prepareToUnlock(this)">
+<span>3</span>
+</div>
+</div>
+<div class="tile" id="tile-4" style="position:relative;">
+<img alt="Part 4" src="part_4.png"/>
+<div class="door" data-correct-number="370" data-tile-id="4" onclick="prepareToUnlock(this)">
+<span>4</span>
+</div>
+</div>
+<div class="tile" id="tile-5" style="position:relative;">
+<img alt="Part 5" src="part_5.png"/>
+<div class="door" data-correct-number="278" data-tile-id="5" onclick="prepareToUnlock(this)">
+<span>5</span>
+</div>
+</div>
+<div class="tile" id="tile-6" style="position:relative;">
+<img alt="Part 6" src="part_6.png"/>
+<div class="door" data-correct-number="448" data-tile-id="6" onclick="prepareToUnlock(this)">
+<span>6</span>
+</div>
+</div>
+<div class="tile" id="tile-7" style="position:relative;">
+<img alt="Part 7" src="part_7.png"/>
+<div class="door" data-correct-number="189" data-tile-id="7" onclick="prepareToUnlock(this)">
+<span>7</span>
+</div>
+</div>
+<div class="tile" id="tile-8" style="position:relative;">
+<img alt="Part 8" src="part_8.png"/>
+<div class="door" data-correct-number="68" data-tile-id="8" onclick="prepareToUnlock(this)">
+<span>8</span>
+</div>
+</div>
+<div class="tile" id="tile-9" style="position:relative;">
+<img alt="Part 9" src="part_9.png"/>
+<div class="door" data-correct-number="65" data-tile-id="9" onclick="prepareToUnlock(this)">
+<span>9</span>
+</div>
+</div>
+<div class="tile" id="tile-10" style="position:relative;">
+<img alt="Part 10" src="part_10.png"/>
+<div class="door" data-correct-number="868" data-tile-id="10" onclick="prepareToUnlock(this)">
+<span>10</span>
+</div>
+</div>
+<div class="tile" id="tile-11" style="position:relative;">
+<img alt="Part 11" src="part_11.png"/>
+<div class="door" data-correct-number="276" data-tile-id="11" onclick="prepareToUnlock(this)">
+<span>11</span>
+</div>
+</div>
+<div class="tile" id="tile-12" style="position:relative;">
+<img alt="Part 12" src="part_12.png"/>
+<div class="door" data-correct-number="747" data-tile-id="12" onclick="prepareToUnlock(this)">
+<span>12</span>
+</div>
+</div>
+<div class="tile" id="tile-13" style="position:relative;">
+<img alt="Part 13" src="part_13.png"/>
+<div class="door" data-correct-number="832" data-tile-id="13" onclick="prepareToUnlock(this)">
+<span>13</span>
+</div>
+</div>
+<div class="tile" id="tile-14" style="position:relative;">
+<img alt="Part 14" src="part_14.png"/>
+<div class="door" data-correct-number="13" data-tile-id="14" onclick="prepareToUnlock(this)">
+<span>14</span>
+</div>
+</div>
+<div class="tile" id="tile-15" style="position:relative;">
+<img alt="Part 15" src="part_15.png"/>
+<div class="door" data-correct-number="322" data-tile-id="15" onclick="prepareToUnlock(this)">
+<span>15</span>
+</div>
+</div>
+<div class="tile" id="tile-16" style="position:relative;">
+<img alt="Part 16" src="part_16.png"/>
+<div class="door" data-correct-number="572" data-tile-id="16" onclick="prepareToUnlock(this)">
+<span>16</span>
+</div>
+</div>
+<div class="tile" id="tile-17" style="position:relative;">
+<img alt="Part 17" src="part_17.png"/>
+<div class="door" data-correct-number="599" data-tile-id="17" onclick="prepareToUnlock(this)">
+<span>17</span>
+</div>
+</div>
+<div class="tile" id="tile-18" style="position:relative;">
+<img alt="Part 18" src="part_18.png"/>
+<div class="door" data-correct-number="510" data-tile-id="18" onclick="prepareToUnlock(this)">
+<span>18</span>
+</div>
+</div>
+<div class="tile" id="tile-19" style="position:relative;">
+<img alt="Part 19" src="part_19.png"/>
+<div class="door" data-correct-number="357" data-tile-id="19" onclick="prepareToUnlock(this)">
+<span>19</span>
+</div>
+</div>
+<div class="tile" id="tile-20" style="position:relative;">
+<img alt="Part 20" src="part_20.png"/>
+<div class="door" data-correct-number="407" data-tile-id="20" onclick="prepareToUnlock(this)">
+<span>20</span>
+</div>
+</div>
+<div class="tile" id="tile-21" style="position:relative;">
+<img alt="Part 21" src="part_21.png"/>
+<div class="door" data-correct-number="269" data-tile-id="21" onclick="prepareToUnlock(this)">
+<span>21</span>
+</div>
+</div>
+<div class="tile" id="tile-22" style="position:relative;">
+<img alt="Part 22" src="part_22.png"/>
+<div class="door" data-correct-number="686" data-tile-id="22" onclick="prepareToUnlock(this)">
+<span>22</span>
+</div>
+</div>
+<div class="tile" id="tile-23" style="position:relative;">
+<img alt="Part 23" src="part_23.png"/>
+<div class="door" data-correct-number="277" data-tile-id="23" onclick="prepareToUnlock(this)">
+<span>23</span>
+</div>
+</div>
+<div class="tile" id="tile-24" style="position:relative;">
+<img alt="Part 24" src="part_24.png"/>
+<div class="door" data-correct-number="384" data-tile-id="24" onclick="prepareToUnlock(this)">
+<span>24</span>
+</div>
+</div>
+<div class="tile" id="tile-25" style="position:relative;">
+<img alt="Part 25" src="part_25.png"/>
+<div class="door" data-correct-number="579" data-tile-id="25" onclick="prepareToUnlock(this)">
+<span>25</span>
+</div>
+</div>
+<div class="tile" id="tile-26" style="position:relative;">
+<img alt="Part 26" class="visible" src="part_26.png"/>
+
+</div>
+<div class="tile" id="tile-27" style="position:relative;">
+<img alt="Part 27" src="part_27.png"/>
+<div class="door" data-correct-number="600" data-tile-id="27" onclick="prepareToUnlock(this)">
+<span>27</span>
+</div>
+</div>
+<div class="tile" id="tile-28" style="position:relative;">
+<img alt="Part 28" src="part_28.png"/>
+<div class="door" data-correct-number="321" data-tile-id="28" onclick="prepareToUnlock(this)">
+<span>28</span>
+</div>
+</div>
+<div class="tile" id="tile-29" style="position:relative;">
+<img alt="Part 29" src="part_29.png"/>
+<div class="door" data-correct-number="839" data-tile-id="29" onclick="prepareToUnlock(this)">
+<span>29</span>
+</div>
+</div>
+<div class="tile" id="tile-30" style="position:relative;">
+<img alt="Part 30" src="part_30.png"/>
+<div class="door" data-correct-number="933" data-tile-id="30" onclick="prepareToUnlock(this)">
+<span>30</span>
+</div>
+</div>
+<div class="tile" id="tile-31" style="position:relative;">
+<img alt="Part 31" src="part_31.png"/>
+<div class="door" data-correct-number="794" data-tile-id="31" onclick="prepareToUnlock(this)">
+<span>31</span>
+</div>
+</div>
+<div class="tile" id="tile-32" style="position:relative;">
+<img alt="Part 32" src="part_32.png"/>
+<div class="door" data-correct-number="353" data-tile-id="32" onclick="prepareToUnlock(this)">
+<span>32</span>
+</div>
+</div>
+<div class="tile" id="tile-33" style="position:relative;">
+<img alt="Part 33" src="part_33.png"/>
+<div class="door" data-correct-number="930" data-tile-id="33" onclick="prepareToUnlock(this)">
+<span>33</span>
+</div>
+</div>
+<div class="tile" id="tile-34" style="position:relative;">
+<img alt="Part 34" src="part_34.png"/>
+<div class="door" data-correct-number="194" data-tile-id="34" onclick="prepareToUnlock(this)">
+<span>34</span>
+</div>
+</div>
+<div class="tile" id="tile-35" style="position:relative;">
+<img alt="Part 35" src="part_35.png"/>
+<div class="door" data-correct-number="476" data-tile-id="35" onclick="prepareToUnlock(this)">
+<span>35</span>
+</div>
+</div>
+<div class="tile" id="tile-36" style="position:relative;">
+<img alt="Part 36" src="part_36.png"/>
+<div class="door" data-correct-number="501" data-tile-id="36" onclick="prepareToUnlock(this)">
+<span>36</span>
+</div>
+</div>
+<div class="tile" id="tile-37" style="position:relative;">
+<img alt="Part 37" src="part_37.png"/>
+<div class="door" data-correct-number="288" data-tile-id="37" onclick="prepareToUnlock(this)">
+<span>37</span>
+</div>
+</div>
+<div class="tile" id="tile-38" style="position:relative;">
+<img alt="Part 38" src="part_38.png"/>
+<div class="door" data-correct-number="258" data-tile-id="38" onclick="prepareToUnlock(this)">
+<span>38</span>
+</div>
+</div>
+<div class="tile" id="tile-39" style="position:relative;">
+<img alt="Part 39" src="part_39.png"/>
+<div class="door" data-correct-number="420" data-tile-id="39" onclick="prepareToUnlock(this)">
+<span>39</span>
+</div>
+</div>
+<div class="tile" id="tile-40" style="position:relative;">
+<img alt="Part 40" src="part_40.png"/>
+<div class="door" data-correct-number="782" data-tile-id="40" onclick="prepareToUnlock(this)">
+<span>40</span>
+</div>
+</div>
+<div class="tile" id="tile-41" style="position:relative;">
+<img alt="Part 41" src="part_41.png"/>
+<div class="door" data-correct-number="453" data-tile-id="41" onclick="prepareToUnlock(this)">
+<span>41</span>
+</div>
+</div>
+<div class="tile" id="tile-42" style="position:relative;">
+<img alt="Part 42" src="part_42.png"/>
+<div class="door" data-correct-number="933" data-tile-id="42" onclick="prepareToUnlock(this)">
+<span>42</span>
+</div>
+</div>
+<div class="tile" id="tile-43" style="position:relative;">
+<img alt="Part 43" src="part_43.png"/>
+<div class="door" data-correct-number="343" data-tile-id="43" onclick="prepareToUnlock(this)">
+<span>43</span>
+</div>
+</div>
+<div class="tile" id="tile-44" style="position:relative;">
+<img alt="Part 44" src="part_44.png"/>
+<div class="door" data-correct-number="62" data-tile-id="44" onclick="prepareToUnlock(this)">
+<span>44</span>
+</div>
+</div>
+<div class="tile" id="tile-45" style="position:relative;">
+<img alt="Part 45" src="part_45.png"/>
+<div class="door" data-correct-number="540" data-tile-id="45" onclick="prepareToUnlock(this)">
+<span>45</span>
+</div>
+</div>
+<div class="tile" id="tile-46" style="position:relative;">
+<img alt="Part 46" src="part_46.png"/>
+<div class="door" data-correct-number="120" data-tile-id="46" onclick="prepareToUnlock(this)">
+<span>46</span>
+</div>
+</div>
+<div class="tile" id="tile-47" style="position:relative;">
+<img alt="Part 47" class="visible" src="part_47.png"/>
+
+</div>
+<div class="tile" id="tile-48" style="position:relative;">
+<img alt="Part 48" class="visible" src="part_48.png"/>
+
+</div>
+<div class="tile" id="tile-49" style="position:relative;">
+<img alt="Part 49" src="part_49.png"/>
+<div class="door" data-correct-number="608" data-tile-id="49" onclick="prepareToUnlock(this)">
+<span>49</span>
+</div>
+</div>
+<div class="tile" id="tile-50" style="position:relative;">
+<img alt="Part 50" src="part_50.png"/>
+<div class="door" data-correct-number="532" data-tile-id="50" onclick="prepareToUnlock(this)">
+<span>50</span>
+</div>
+</div>
+<div class="tile" id="tile-51" style="position:relative;">
+<img alt="Part 51" src="part_51.png"/>
+<div class="door" data-correct-number="648" data-tile-id="51" onclick="prepareToUnlock(this)">
+<span>51</span>
+</div>
+</div>
+<div class="tile" id="tile-52" style="position:relative;">
+<img alt="Part 52" src="part_52.png"/>
+<div class="door" data-correct-number="643" data-tile-id="52" onclick="prepareToUnlock(this)">
+<span>52</span>
+</div>
+</div>
+<div class="tile" id="tile-53" style="position:relative;">
+<img alt="Part 53" src="part_53.png"/>
+<div class="door" data-correct-number="358" data-tile-id="53" onclick="prepareToUnlock(this)">
+<span>53</span>
+</div>
+</div>
+<div class="tile" id="tile-54" style="position:relative;">
+<img alt="Part 54" src="part_54.png"/>
+<div class="door" data-correct-number="410" data-tile-id="54" onclick="prepareToUnlock(this)">
+<span>54</span>
+</div>
+</div>
+<div class="tile" id="tile-55" style="position:relative;">
+<img alt="Part 55" src="part_55.png"/>
+<div class="door" data-correct-number="869" data-tile-id="55" onclick="prepareToUnlock(this)">
+<span>55</span>
+</div>
+</div>
+<div class="tile" id="tile-56" style="position:relative;">
+<img alt="Part 56" src="part_56.png"/>
+<div class="door" data-correct-number="292" data-tile-id="56" onclick="prepareToUnlock(this)">
+<span>56</span>
+</div>
+</div>
+<div class="tile" id="tile-57" style="position:relative;">
+<img alt="Part 57" src="part_57.png"/>
+<div class="door" data-correct-number="188" data-tile-id="57" onclick="prepareToUnlock(this)">
+<span>57</span>
+</div>
+</div>
+<div class="tile" id="tile-58" style="position:relative;">
+<img alt="Part 58" src="part_58.png"/>
+<div class="door" data-correct-number="509" data-tile-id="58" onclick="prepareToUnlock(this)">
+<span>58</span>
+</div>
+</div>
+<div class="tile" id="tile-59" style="position:relative;">
+<img alt="Part 59" src="part_59.png"/>
+<div class="door" data-correct-number="726" data-tile-id="59" onclick="prepareToUnlock(this)">
+<span>59</span>
+</div>
+</div>
+<div class="tile" id="tile-60" style="position:relative;">
+<img alt="Part 60" class="visible" src="part_60.png"/>
+
+</div>
+<div class="tile" id="tile-61" style="position:relative;">
+<img alt="Part 61" src="part_61.png"/>
+<div class="door" data-correct-number="428" data-tile-id="61" onclick="prepareToUnlock(this)">
+<span>61</span>
+</div>
+</div>
+<div class="tile" id="tile-62" style="position:relative;">
+<img alt="Part 62" src="part_62.png"/>
+<div class="door" data-correct-number="488" data-tile-id="62" onclick="prepareToUnlock(this)">
+<span>62</span>
+</div>
+</div>
+<div class="tile" id="tile-63" style="position:relative;">
+<img alt="Part 63" src="part_63.png"/>
+<div class="door" data-correct-number="824" data-tile-id="63" onclick="prepareToUnlock(this)">
+<span>63</span>
+</div>
+</div>
+<div class="tile" id="tile-64" style="position:relative;">
+<img alt="Part 64" src="part_64.png"/>
+<div class="door" data-correct-number="837" data-tile-id="64" onclick="prepareToUnlock(this)">
+<span>64</span>
+</div>
+</div>
+<div class="tile" id="tile-65" style="position:relative;">
+<img alt="Part 65" src="part_65.png"/>
+<div class="door" data-correct-number="928" data-tile-id="65" onclick="prepareToUnlock(this)">
+<span>65</span>
+</div>
+</div>
+<div class="tile" id="tile-66" style="position:relative;">
+<img alt="Part 66" class="visible" src="part_66.png"/>
+
+</div>
+<div class="tile" id="tile-67" style="position:relative;">
+<img alt="Part 67" src="part_67.png"/>
+<div class="door" data-correct-number="632" data-tile-id="67" onclick="prepareToUnlock(this)">
+<span>67</span>
+</div>
+</div>
+<div class="tile" id="tile-68" style="position:relative;">
+<img alt="Part 68" src="part_68.png"/>
+<div class="door" data-correct-number="741" data-tile-id="68" onclick="prepareToUnlock(this)">
+<span>68</span>
+</div>
+</div>
+<div class="tile" id="tile-69" style="position:relative;">
+<img alt="Part 69" src="part_69.png"/>
+<div class="door" data-correct-number="539" data-tile-id="69" onclick="prepareToUnlock(this)">
+<span>69</span>
+</div>
+</div>
+<div class="tile" id="tile-70" style="position:relative;">
+<img alt="Part 70" src="part_70.png"/>
+<div class="door" data-correct-number="2" data-tile-id="70" onclick="prepareToUnlock(this)">
+<span>70</span>
+</div>
+</div>
+<div class="tile" id="tile-71" style="position:relative;">
+<img alt="Part 71" src="part_71.png"/>
+<div class="door" data-correct-number="36" data-tile-id="71" onclick="prepareToUnlock(this)">
+<span>71</span>
+</div>
+</div>
+<div class="tile" id="tile-72" style="position:relative;">
+<img alt="Part 72" class="visible" src="part_72.png"/>
+
+</div>
+<div class="tile" id="tile-73" style="position:relative;">
+<img alt="Part 73" src="part_73.png"/>
+<div class="door" data-correct-number="422" data-tile-id="73" onclick="prepareToUnlock(this)">
+<span>73</span>
+</div>
+</div>
+<div class="tile" id="tile-74" style="position:relative;">
+<img alt="Part 74" class="visible" src="part_74.png"/>
+
+</div>
+<div class="tile" id="tile-75" style="position:relative;">
+<img alt="Part 75" class="visible" src="part_75.png"/>
+
+</div>
+<div class="tile" id="tile-76" style="position:relative;">
+<img alt="Part 76" src="part_76.png"/>
+<div class="door" data-correct-number="660" data-tile-id="76" onclick="prepareToUnlock(this)">
+<span>76</span>
+</div>
+</div>
+<div class="tile" id="tile-77" style="position:relative;">
+<img alt="Part 77" src="part_77.png"/>
+<div class="door" data-correct-number="603" data-tile-id="77" onclick="prepareToUnlock(this)">
+<span>77</span>
+</div>
+</div>
+<div class="tile" id="tile-78" style="position:relative;">
+<img alt="Part 78" class="visible" src="part_78.png"/>
+
+</div>
+<div class="tile" id="tile-79" style="position:relative;">
+<img alt="Part 79" src="part_79.png"/>
+<div class="door" data-correct-number="976" data-tile-id="79" onclick="prepareToUnlock(this)">
+<span>79</span>
+</div>
+</div>
+<div class="tile" id="tile-80" style="position:relative;">
+<img alt="Part 80" class="visible" src="part_80.png"/>
+
+</div>
+<div class="tile" id="tile-81" style="position:relative;">
+<img alt="Part 81" src="part_81.png"/>
+<div class="door" data-correct-number="455" data-tile-id="81" onclick="prepareToUnlock(this)">
+<span>81</span>
+</div>
+</div>
+<div class="tile" id="tile-82" style="position:relative;">
+<img alt="Part 82" src="part_82.png"/>
+<div class="door" data-correct-number="74" data-tile-id="82" onclick="prepareToUnlock(this)">
+<span>82</span>
+</div>
+</div>
+<div class="tile" id="tile-83" style="position:relative;">
+<img alt="Part 83" src="part_83.png"/>
+<div class="door" data-correct-number="445" data-tile-id="83" onclick="prepareToUnlock(this)">
+<span>83</span>
+</div>
+</div>
+<div class="tile" id="tile-84" style="position:relative;">
+<img alt="Part 84" src="part_84.png"/>
+<div class="door" data-correct-number="506" data-tile-id="84" onclick="prepareToUnlock(this)">
+<span>84</span>
+</div>
+</div>
+<div class="tile" id="tile-85" style="position:relative;">
+<img alt="Part 85" src="part_85.png"/>
+<div class="door" data-correct-number="85" data-tile-id="85" onclick="prepareToUnlock(this)">
+<span>85</span>
+</div>
+</div>
+<div class="tile" id="tile-86" style="position:relative;">
+<img alt="Part 86" src="part_86.png"/>
+<div class="door" data-correct-number="500" data-tile-id="86" onclick="prepareToUnlock(this)">
+<span>86</span>
+</div>
+</div>
+<div class="tile" id="tile-87" style="position:relative;">
+<img alt="Part 87" src="part_87.png"/>
+<div class="door" data-correct-number="408" data-tile-id="87" onclick="prepareToUnlock(this)">
+<span>87</span>
+</div>
+</div>
+<div class="tile" id="tile-88" style="position:relative;">
+<img alt="Part 88" src="part_88.png"/>
+<div class="door" data-correct-number="253" data-tile-id="88" onclick="prepareToUnlock(this)">
+<span>88</span>
+</div>
+</div>
+<div class="tile" id="tile-89" style="position:relative;">
+<img alt="Part 89" src="part_89.png"/>
+<div class="door" data-correct-number="338" data-tile-id="89" onclick="prepareToUnlock(this)">
+<span>89</span>
+</div>
+</div>
+<div class="tile" id="tile-90" style="position:relative;">
+<img alt="Part 90" src="part_90.png"/>
+<div class="door" data-correct-number="625" data-tile-id="90" onclick="prepareToUnlock(this)">
+<span>90</span>
+</div>
+</div>
+<div class="tile" id="tile-91" style="position:relative;">
+<img alt="Part 91" src="part_91.png"/>
+<div class="door" data-correct-number="107" data-tile-id="91" onclick="prepareToUnlock(this)">
+<span>91</span>
+</div>
+</div>
+<div class="tile" id="tile-92" style="position:relative;">
+<img alt="Part 92" src="part_92.png"/>
+<div class="door" data-correct-number="704" data-tile-id="92" onclick="prepareToUnlock(this)">
+<span>92</span>
+</div>
+</div>
+<div class="tile" id="tile-93" style="position:relative;">
+<img alt="Part 93" src="part_93.png"/>
+<div class="door" data-correct-number="815" data-tile-id="93" onclick="prepareToUnlock(this)">
+<span>93</span>
+</div>
+</div>
+<div class="tile" id="tile-94" style="position:relative;">
+<img alt="Part 94" src="part_94.png"/>
+<div class="door" data-correct-number="792" data-tile-id="94" onclick="prepareToUnlock(this)">
+<span>94</span>
+</div>
+</div>
+<div class="tile" id="tile-95" style="position:relative;">
+<img alt="Part 95" src="part_95.png"/>
+<div class="door" data-correct-number="567" data-tile-id="95" onclick="prepareToUnlock(this)">
+<span>95</span>
+</div>
+</div>
+<div class="tile" id="tile-96" style="position:relative;">
+<img alt="Part 96" src="part_96.png"/>
+<div class="door" data-correct-number="813" data-tile-id="96" onclick="prepareToUnlock(this)">
+<span>96</span>
+</div>
+</div>
+<div class="tile" id="tile-97" style="position:relative;">
+<img alt="Part 97" src="part_97.png"/>
+<div class="door" data-correct-number="546" data-tile-id="97" onclick="prepareToUnlock(this)">
+<span>97</span>
+</div>
+</div>
+<div class="tile" id="tile-98" style="position:relative;">
+<img alt="Part 98" src="part_98.png"/>
+<div class="door" data-correct-number="770" data-tile-id="98" onclick="prepareToUnlock(this)">
+<span>98</span>
+</div>
+</div>
+<div class="tile" id="tile-99" style="position:relative;">
+<img alt="Part 99" src="part_99.png"/>
+<div class="door" data-correct-number="779" data-tile-id="99" onclick="prepareToUnlock(this)">
+<span>99</span>
+</div>
+</div>
+<div class="tile" id="tile-100" style="position:relative;">
+<img alt="Part 100" src="part_100.png"/>
+<div class="door" data-correct-number="525" data-tile-id="100" onclick="prepareToUnlock(this)">
+<span>100</span>
+</div>
+</div>
+<div class="tile" id="tile-101" style="position:relative;">
+<img alt="Part 101" src="part_101.png"/>
+<div class="door" data-correct-number="176" data-tile-id="101" onclick="prepareToUnlock(this)">
+<span>101</span>
+</div>
+</div>
+<div class="tile" id="tile-102" style="position:relative;">
+<img alt="Part 102" src="part_102.png"/>
+<div class="door" data-correct-number="232" data-tile-id="102" onclick="prepareToUnlock(this)">
+<span>102</span>
+</div>
+</div>
+<div class="tile" id="tile-103" style="position:relative;">
+<img alt="Part 103" src="part_103.png"/>
+<div class="door" data-correct-number="838" data-tile-id="103" onclick="prepareToUnlock(this)">
+<span>103</span>
+</div>
+</div>
+<div class="tile" id="tile-104" style="position:relative;">
+<img alt="Part 104" src="part_104.png"/>
+<div class="door" data-correct-number="524" data-tile-id="104" onclick="prepareToUnlock(this)">
+<span>104</span>
+</div>
+</div>
+<div class="tile" id="tile-105" style="position:relative;">
+<img alt="Part 105" src="part_105.png"/>
+<div class="door" data-correct-number="28" data-tile-id="105" onclick="prepareToUnlock(this)">
+<span>105</span>
+</div>
+</div>
+<div class="tile" id="tile-106" style="position:relative;">
+<img alt="Part 106" src="part_106.png"/>
+<div class="door" data-correct-number="555" data-tile-id="106" onclick="prepareToUnlock(this)">
+<span>106</span>
+</div>
+</div>
+<div class="tile" id="tile-107" style="position:relative;">
+<img alt="Part 107" src="part_107.png"/>
+<div class="door" data-correct-number="490" data-tile-id="107" onclick="prepareToUnlock(this)">
+<span>107</span>
+</div>
+</div>
+<div class="tile" id="tile-108" style="position:relative;">
+<img alt="Part 108" src="part_108.png"/>
+<div class="door" data-correct-number="758" data-tile-id="108" onclick="prepareToUnlock(this)">
+<span>108</span>
+</div>
+</div>
+<div class="tile" id="tile-109" style="position:relative;">
+<img alt="Part 109" src="part_109.png"/>
+<div class="door" data-correct-number="523" data-tile-id="109" onclick="prepareToUnlock(this)">
+<span>109</span>
+</div>
+</div>
+<div class="tile" id="tile-110" style="position:relative;">
+<img alt="Part 110" src="part_110.png"/>
+<div class="door" data-correct-number="129" data-tile-id="110" onclick="prepareToUnlock(this)">
+<span>110</span>
+</div>
+</div>
+<div class="tile" id="tile-111" style="position:relative;">
+<img alt="Part 111" src="part_111.png"/>
+<div class="door" data-correct-number="472" data-tile-id="111" onclick="prepareToUnlock(this)">
+<span>111</span>
+</div>
+</div>
+<div class="tile" id="tile-112" style="position:relative;">
+<img alt="Part 112" src="part_112.png"/>
+<div class="door" data-correct-number="811" data-tile-id="112" onclick="prepareToUnlock(this)">
+<span>112</span>
+</div>
+</div>
+<div class="tile" id="tile-113" style="position:relative;">
+<img alt="Part 113" class="visible" src="part_113.png"/>
+
+</div>
+<div class="tile" id="tile-114" style="position:relative;">
+<img alt="Part 114" src="part_114.png"/>
+<div class="door" data-correct-number="51" data-tile-id="114" onclick="prepareToUnlock(this)">
+<span>114</span>
+</div>
+</div>
+<div class="tile" id="tile-115" style="position:relative;">
+<img alt="Part 115" class="visible" src="part_115.png"/>
+
+</div>
+<div class="tile" id="tile-116" style="position:relative;">
+<img alt="Part 116" src="part_116.png"/>
+<div class="door" data-correct-number="992" data-tile-id="116" onclick="prepareToUnlock(this)">
+<span>116</span>
+</div>
+</div>
+<div class="tile" id="tile-117" style="position:relative;">
+<img alt="Part 117" src="part_117.png"/>
+<div class="door" data-correct-number="70" data-tile-id="117" onclick="prepareToUnlock(this)">
+<span>117</span>
+</div>
+</div>
+<div class="tile" id="tile-118" style="position:relative;">
+<img alt="Part 118" src="part_118.png"/>
+<div class="door" data-correct-number="859" data-tile-id="118" onclick="prepareToUnlock(this)">
+<span>118</span>
+</div>
+</div>
+<div class="tile" id="tile-119" style="position:relative;">
+<img alt="Part 119" src="part_119.png"/>
+<div class="door" data-correct-number="483" data-tile-id="119" onclick="prepareToUnlock(this)">
+<span>119</span>
+</div>
+</div>
+<div class="tile" id="tile-120" style="position:relative;">
+<img alt="Part 120" src="part_120.png"/>
+<div class="door" data-correct-number="64" data-tile-id="120" onclick="prepareToUnlock(this)">
+<span>120</span>
+</div>
+</div>
+<div class="tile" id="tile-121" style="position:relative;">
+<img alt="Part 121" src="part_121.png"/>
+<div class="door" data-correct-number="93" data-tile-id="121" onclick="prepareToUnlock(this)">
+<span>121</span>
+</div>
+</div>
+<div class="tile" id="tile-122" style="position:relative;">
+<img alt="Part 122" src="part_122.png"/>
+<div class="door" data-correct-number="793" data-tile-id="122" onclick="prepareToUnlock(this)">
+<span>122</span>
+</div>
+</div>
+<div class="tile" id="tile-123" style="position:relative;">
+<img alt="Part 123" src="part_123.png"/>
+<div class="door" data-correct-number="256" data-tile-id="123" onclick="prepareToUnlock(this)">
+<span>123</span>
+</div>
+</div>
+<div class="tile" id="tile-124" style="position:relative;">
+<img alt="Part 124" src="part_124.png"/>
+<div class="door" data-correct-number="953" data-tile-id="124" onclick="prepareToUnlock(this)">
+<span>124</span>
+</div>
+</div>
+<div class="tile" id="tile-125" style="position:relative;">
+<img alt="Part 125" src="part_125.png"/>
+<div class="door" data-correct-number="360" data-tile-id="125" onclick="prepareToUnlock(this)">
+<span>125</span>
+</div>
+</div>
+<div class="tile" id="tile-126" style="position:relative;">
+<img alt="Part 126" src="part_126.png"/>
+<div class="door" data-correct-number="538" data-tile-id="126" onclick="prepareToUnlock(this)">
+<span>126</span>
+</div>
+</div>
+<div class="tile" id="tile-127" style="position:relative;">
+<img alt="Part 127" src="part_127.png"/>
+<div class="door" data-correct-number="817" data-tile-id="127" onclick="prepareToUnlock(this)">
+<span>127</span>
+</div>
+</div>
+<div class="tile" id="tile-128" style="position:relative;">
+<img alt="Part 128" src="part_128.png"/>
+<div class="door" data-correct-number="915" data-tile-id="128" onclick="prepareToUnlock(this)">
+<span>128</span>
+</div>
+</div>
+<div class="tile" id="tile-129" style="position:relative;">
+<img alt="Part 129" src="part_129.png"/>
+<div class="door" data-correct-number="799" data-tile-id="129" onclick="prepareToUnlock(this)">
+<span>129</span>
+</div>
+</div>
+<div class="tile" id="tile-130" style="position:relative;">
+<img alt="Part 130" src="part_130.png"/>
+<div class="door" data-correct-number="382" data-tile-id="130" onclick="prepareToUnlock(this)">
+<span>130</span>
+</div>
+</div>
+<div class="tile" id="tile-131" style="position:relative;">
+<img alt="Part 131" class="visible" src="part_131.png"/>
+
+</div>
+<div class="tile" id="tile-132" style="position:relative;">
+<img alt="Part 132" src="part_132.png"/>
+<div class="door" data-correct-number="814" data-tile-id="132" onclick="prepareToUnlock(this)">
+<span>132</span>
+</div>
+</div>
+<div class="tile" id="tile-133" style="position:relative;">
+<img alt="Part 133" src="part_133.png"/>
+<div class="door" data-correct-number="410" data-tile-id="133" onclick="prepareToUnlock(this)">
+<span>133</span>
+</div>
+</div>
+<div class="tile" id="tile-134" style="position:relative;">
+<img alt="Part 134" src="part_134.png"/>
+<div class="door" data-correct-number="78" data-tile-id="134" onclick="prepareToUnlock(this)">
+<span>134</span>
+</div>
+</div>
+<div class="tile" id="tile-135" style="position:relative;">
+<img alt="Part 135" src="part_135.png"/>
+<div class="door" data-correct-number="180" data-tile-id="135" onclick="prepareToUnlock(this)">
+<span>135</span>
+</div>
+</div>
+<div class="tile" id="tile-136" style="position:relative;">
+<img alt="Part 136" src="part_136.png"/>
+<div class="door" data-correct-number="317" data-tile-id="136" onclick="prepareToUnlock(this)">
+<span>136</span>
+</div>
+</div>
+<div class="tile" id="tile-137" style="position:relative;">
+<img alt="Part 137" src="part_137.png"/>
+<div class="door" data-correct-number="309" data-tile-id="137" onclick="prepareToUnlock(this)">
+<span>137</span>
+</div>
+</div>
+<div class="tile" id="tile-138" style="position:relative;">
+<img alt="Part 138" class="visible" src="part_138.png"/>
+
+</div>
+<div class="tile" id="tile-139" style="position:relative;">
+<img alt="Part 139" src="part_139.png"/>
+<div class="door" data-correct-number="998" data-tile-id="139" onclick="prepareToUnlock(this)">
+<span>139</span>
+</div>
+</div>
+<div class="tile" id="tile-140" style="position:relative;">
+<img alt="Part 140" src="part_140.png"/>
+<div class="door" data-correct-number="855" data-tile-id="140" onclick="prepareToUnlock(this)">
+<span>140</span>
+</div>
+</div>
+<div class="tile" id="tile-141" style="position:relative;">
+<img alt="Part 141" src="part_141.png"/>
+<div class="door" data-correct-number="324" data-tile-id="141" onclick="prepareToUnlock(this)">
+<span>141</span>
+</div>
+</div>
+<div class="tile" id="tile-142" style="position:relative;">
+<img alt="Part 142" src="part_142.png"/>
+<div class="door" data-correct-number="92" data-tile-id="142" onclick="prepareToUnlock(this)">
+<span>142</span>
+</div>
+</div>
+<div class="tile" id="tile-143" style="position:relative;">
+<img alt="Part 143" src="part_143.png"/>
+<div class="door" data-correct-number="539" data-tile-id="143" onclick="prepareToUnlock(this)">
+<span>143</span>
+</div>
+</div>
+<div class="tile" id="tile-144" style="position:relative;">
+<img alt="Part 144" src="part_144.png"/>
+<div class="door" data-correct-number="470" data-tile-id="144" onclick="prepareToUnlock(this)">
+<span>144</span>
+</div>
+</div>
+<div class="tile" id="tile-145" style="position:relative;">
+<img alt="Part 145" src="part_145.png"/>
+<div class="door" data-correct-number="639" data-tile-id="145" onclick="prepareToUnlock(this)">
+<span>145</span>
+</div>
+</div>
+<div class="tile" id="tile-146" style="position:relative;">
+<img alt="Part 146" src="part_146.png"/>
+<div class="door" data-correct-number="783" data-tile-id="146" onclick="prepareToUnlock(this)">
+<span>146</span>
+</div>
+</div>
+<div class="tile" id="tile-147" style="position:relative;">
+<img alt="Part 147" src="part_147.png"/>
+<div class="door" data-correct-number="271" data-tile-id="147" onclick="prepareToUnlock(this)">
+<span>147</span>
+</div>
+</div>
+<div class="tile" id="tile-148" style="position:relative;">
+<img alt="Part 148" src="part_148.png"/>
+<div class="door" data-correct-number="704" data-tile-id="148" onclick="prepareToUnlock(this)">
+<span>148</span>
+</div>
+</div>
+<div class="tile" id="tile-149" style="position:relative;">
+<img alt="Part 149" src="part_149.png"/>
+<div class="door" data-correct-number="692" data-tile-id="149" onclick="prepareToUnlock(this)">
+<span>149</span>
+</div>
+</div>
+<div class="tile" id="tile-150" style="position:relative;">
+<img alt="Part 150" src="part_150.png"/>
+<div class="door" data-correct-number="466" data-tile-id="150" onclick="prepareToUnlock(this)">
+<span>150</span>
+</div>
+</div>
+<div class="tile" id="tile-151" style="position:relative;">
+<img alt="Part 151" src="part_151.png"/>
+<div class="door" data-correct-number="233" data-tile-id="151" onclick="prepareToUnlock(this)">
+<span>151</span>
+</div>
+</div>
+<div class="tile" id="tile-152" style="position:relative;">
+<img alt="Part 152" src="part_152.png"/>
+<div class="door" data-correct-number="370" data-tile-id="152" onclick="prepareToUnlock(this)">
+<span>152</span>
+</div>
+</div>
+<div class="tile" id="tile-153" style="position:relative;">
+<img alt="Part 153" src="part_153.png"/>
+<div class="door" data-correct-number="266" data-tile-id="153" onclick="prepareToUnlock(this)">
+<span>153</span>
+</div>
+</div>
+<div class="tile" id="tile-154" style="position:relative;">
+<img alt="Part 154" src="part_154.png"/>
+<div class="door" data-correct-number="382" data-tile-id="154" onclick="prepareToUnlock(this)">
+<span>154</span>
+</div>
+</div>
+<div class="tile" id="tile-155" style="position:relative;">
+<img alt="Part 155" class="visible" src="part_155.png"/>
+
+</div>
+<div class="tile" id="tile-156" style="position:relative;">
+<img alt="Part 156" src="part_156.png"/>
+<div class="door" data-correct-number="628" data-tile-id="156" onclick="prepareToUnlock(this)">
+<span>156</span>
+</div>
+</div>
+<div class="tile" id="tile-157" style="position:relative;">
+<img alt="Part 157" src="part_157.png"/>
+<div class="door" data-correct-number="470" data-tile-id="157" onclick="prepareToUnlock(this)">
+<span>157</span>
+</div>
+</div>
+<div class="tile" id="tile-158" style="position:relative;">
+<img alt="Part 158" src="part_158.png"/>
+<div class="door" data-correct-number="868" data-tile-id="158" onclick="prepareToUnlock(this)">
+<span>158</span>
+</div>
+</div>
+<div class="tile" id="tile-159" style="position:relative;">
+<img alt="Part 159" src="part_159.png"/>
+<div class="door" data-correct-number="27" data-tile-id="159" onclick="prepareToUnlock(this)">
+<span>159</span>
+</div>
+</div>
+<div class="tile" id="tile-160" style="position:relative;">
+<img alt="Part 160" src="part_160.png"/>
+<div class="door" data-correct-number="96" data-tile-id="160" onclick="prepareToUnlock(this)">
+<span>160</span>
+</div>
+</div>
+<div class="tile" id="tile-161" style="position:relative;">
+<img alt="Part 161" class="visible" src="part_161.png"/>
+
+</div>
+<div class="tile" id="tile-162" style="position:relative;">
+<img alt="Part 162" src="part_162.png"/>
+<div class="door" data-correct-number="641" data-tile-id="162" onclick="prepareToUnlock(this)">
+<span>162</span>
+</div>
+</div>
+<div class="tile" id="tile-163" style="position:relative;">
+<img alt="Part 163" class="visible" src="part_163.png"/>
+
+</div>
+<div class="tile" id="tile-164" style="position:relative;">
+<img alt="Part 164" src="part_164.png"/>
+<div class="door" data-correct-number="199" data-tile-id="164" onclick="prepareToUnlock(this)">
+<span>164</span>
+</div>
+</div>
+<div class="tile" id="tile-165" style="position:relative;">
+<img alt="Part 165" src="part_165.png"/>
+<div class="door" data-correct-number="10" data-tile-id="165" onclick="prepareToUnlock(this)">
+<span>165</span>
+</div>
+</div>
+<div class="tile" id="tile-166" style="position:relative;">
+<img alt="Part 166" src="part_166.png"/>
+<div class="door" data-correct-number="597" data-tile-id="166" onclick="prepareToUnlock(this)">
+<span>166</span>
+</div>
+</div>
+<div class="tile" id="tile-167" style="position:relative;">
+<img alt="Part 167" src="part_167.png"/>
+<div class="door" data-correct-number="83" data-tile-id="167" onclick="prepareToUnlock(this)">
+<span>167</span>
+</div>
+</div>
+<div class="tile" id="tile-168" style="position:relative;">
+<img alt="Part 168" class="visible" src="part_168.png"/>
+
+</div>
+<div class="tile" id="tile-169" style="position:relative;">
+<img alt="Part 169" src="part_169.png"/>
+<div class="door" data-correct-number="843" data-tile-id="169" onclick="prepareToUnlock(this)">
+<span>169</span>
+</div>
+</div>
+<div class="tile" id="tile-170" style="position:relative;">
+<img alt="Part 170" src="part_170.png"/>
+<div class="door" data-correct-number="288" data-tile-id="170" onclick="prepareToUnlock(this)">
+<span>170</span>
+</div>
+</div>
+<div class="tile" id="tile-171" style="position:relative;">
+<img alt="Part 171" src="part_171.png"/>
+<div class="door" data-correct-number="331" data-tile-id="171" onclick="prepareToUnlock(this)">
+<span>171</span>
+</div>
+</div>
+<div class="tile" id="tile-172" style="position:relative;">
+<img alt="Part 172" class="visible" src="part_172.png"/>
+
+</div>
+<div class="tile" id="tile-173" style="position:relative;">
+<img alt="Part 173" src="part_173.png"/>
+<div class="door" data-correct-number="158" data-tile-id="173" onclick="prepareToUnlock(this)">
+<span>173</span>
+</div>
+</div>
+<div class="tile" id="tile-174" style="position:relative;">
+<img alt="Part 174" src="part_174.png"/>
+<div class="door" data-correct-number="53" data-tile-id="174" onclick="prepareToUnlock(this)">
+<span>174</span>
+</div>
+</div>
+<div class="tile" id="tile-175" style="position:relative;">
+<img alt="Part 175" src="part_175.png"/>
+<div class="door" data-correct-number="716" data-tile-id="175" onclick="prepareToUnlock(this)">
+<span>175</span>
+</div>
+</div>
+<div class="tile" id="tile-176" style="position:relative;">
+<img alt="Part 176" class="visible" src="part_176.png"/>
+
+</div>
+<div class="tile" id="tile-177" style="position:relative;">
+<img alt="Part 177" src="part_177.png"/>
+<div class="door" data-correct-number="92" data-tile-id="177" onclick="prepareToUnlock(this)">
+<span>177</span>
+</div>
+</div>
+<div class="tile" id="tile-178" style="position:relative;">
+<img alt="Part 178" src="part_178.png"/>
+<div class="door" data-correct-number="931" data-tile-id="178" onclick="prepareToUnlock(this)">
+<span>178</span>
+</div>
+</div>
+<div class="tile" id="tile-179" style="position:relative;">
+<img alt="Part 179" src="part_179.png"/>
+<div class="door" data-correct-number="122" data-tile-id="179" onclick="prepareToUnlock(this)">
+<span>179</span>
+</div>
+</div>
+<div class="tile" id="tile-180" style="position:relative;">
+<img alt="Part 180" src="part_180.png"/>
+<div class="door" data-correct-number="892" data-tile-id="180" onclick="prepareToUnlock(this)">
+<span>180</span>
+</div>
+</div>
+<div class="tile" id="tile-181" style="position:relative;">
+<img alt="Part 181" src="part_181.png"/>
+<div class="door" data-correct-number="545" data-tile-id="181" onclick="prepareToUnlock(this)">
+<span>181</span>
+</div>
+</div>
+<div class="tile" id="tile-182" style="position:relative;">
+<img alt="Part 182" src="part_182.png"/>
+<div class="door" data-correct-number="933" data-tile-id="182" onclick="prepareToUnlock(this)">
+<span>182</span>
+</div>
+</div>
+<div class="tile" id="tile-183" style="position:relative;">
+<img alt="Part 183" src="part_183.png"/>
+<div class="door" data-correct-number="180" data-tile-id="183" onclick="prepareToUnlock(this)">
+<span>183</span>
+</div>
+</div>
+<div class="tile" id="tile-184" style="position:relative;">
+<img alt="Part 184" src="part_184.png"/>
+<div class="door" data-correct-number="485" data-tile-id="184" onclick="prepareToUnlock(this)">
+<span>184</span>
+</div>
+</div>
+<div class="tile" id="tile-185" style="position:relative;">
+<img alt="Part 185" src="part_185.png"/>
+<div class="door" data-correct-number="375" data-tile-id="185" onclick="prepareToUnlock(this)">
+<span>185</span>
+</div>
+</div>
+<div class="tile" id="tile-186" style="position:relative;">
+<img alt="Part 186" src="part_186.png"/>
+<div class="door" data-correct-number="152" data-tile-id="186" onclick="prepareToUnlock(this)">
+<span>186</span>
+</div>
+</div>
+<div class="tile" id="tile-187" style="position:relative;">
+<img alt="Part 187" src="part_187.png"/>
+<div class="door" data-correct-number="189" data-tile-id="187" onclick="prepareToUnlock(this)">
+<span>187</span>
+</div>
+</div>
+<div class="tile" id="tile-188" style="position:relative;">
+<img alt="Part 188" class="visible" src="part_188.png"/>
+
+</div>
+<div class="tile" id="tile-189" style="position:relative;">
+<img alt="Part 189" src="part_189.png"/>
+<div class="door" data-correct-number="955" data-tile-id="189" onclick="prepareToUnlock(this)">
+<span>189</span>
+</div>
+</div>
+<div class="tile" id="tile-190" style="position:relative;">
+<img alt="Part 190" src="part_190.png"/>
+<div class="door" data-correct-number="444" data-tile-id="190" onclick="prepareToUnlock(this)">
+<span>190</span>
+</div>
+</div>
+<div class="tile" id="tile-191" style="position:relative;">
+<img alt="Part 191" src="part_191.png"/>
+<div class="door" data-correct-number="560" data-tile-id="191" onclick="prepareToUnlock(this)">
+<span>191</span>
+</div>
+</div>
+<div class="tile" id="tile-192" style="position:relative;">
+<img alt="Part 192" src="part_192.png"/>
+<div class="door" data-correct-number="775" data-tile-id="192" onclick="prepareToUnlock(this)">
+<span>192</span>
+</div>
+</div>
+<div class="tile" id="tile-193" style="position:relative;">
+<img alt="Part 193" class="visible" src="part_193.png"/>
+
+</div>
+<div class="tile" id="tile-194" style="position:relative;">
+<img alt="Part 194" src="part_194.png"/>
+<div class="door" data-correct-number="786" data-tile-id="194" onclick="prepareToUnlock(this)">
+<span>194</span>
+</div>
+</div>
+<div class="tile" id="tile-195" style="position:relative;">
+<img alt="Part 195" src="part_195.png"/>
+<div class="door" data-correct-number="72" data-tile-id="195" onclick="prepareToUnlock(this)">
+<span>195</span>
+</div>
+</div>
+<div class="tile" id="tile-196" style="position:relative;">
+<img alt="Part 196" src="part_196.png"/>
+<div class="door" data-correct-number="359" data-tile-id="196" onclick="prepareToUnlock(this)">
+<span>196</span>
+</div>
+</div>
+<div class="tile" id="tile-197" style="position:relative;">
+<img alt="Part 197" class="visible" src="part_197.png"/>
+
+</div>
+<div class="tile" id="tile-198" style="position:relative;">
+<img alt="Part 198" src="part_198.png"/>
+<div class="door" data-correct-number="992" data-tile-id="198" onclick="prepareToUnlock(this)">
+<span>198</span>
+</div>
+</div>
+<div class="tile" id="tile-199" style="position:relative;">
+<img alt="Part 199" src="part_199.png"/>
+<div class="door" data-correct-number="582" data-tile-id="199" onclick="prepareToUnlock(this)">
+<span>199</span>
+</div>
+</div>
+<div class="tile" id="tile-200" style="position:relative;">
+<img alt="Part 200" src="part_200.png"/>
+<div class="door" data-correct-number="466" data-tile-id="200" onclick="prepareToUnlock(this)">
+<span>200</span>
+</div>
+</div>
+<div class="tile" id="tile-201" style="position:relative;">
+<img alt="Part 201" src="part_201.png"/>
+<div class="door" data-correct-number="18" data-tile-id="201" onclick="prepareToUnlock(this)">
+<span>201</span>
+</div>
+</div>
+<div class="tile" id="tile-202" style="position:relative;">
+<img alt="Part 202" src="part_202.png"/>
+<div class="door" data-correct-number="893" data-tile-id="202" onclick="prepareToUnlock(this)">
+<span>202</span>
+</div>
+</div>
+<div class="tile" id="tile-203" style="position:relative;">
+<img alt="Part 203" src="part_203.png"/>
+<div class="door" data-correct-number="306" data-tile-id="203" onclick="prepareToUnlock(this)">
+<span>203</span>
+</div>
+</div>
+<div class="tile" id="tile-204" style="position:relative;">
+<img alt="Part 204" src="part_204.png"/>
+<div class="door" data-correct-number="549" data-tile-id="204" onclick="prepareToUnlock(this)">
+<span>204</span>
+</div>
+</div>
+<div class="tile" id="tile-205" style="position:relative;">
+<img alt="Part 205" src="part_205.png"/>
+<div class="door" data-correct-number="702" data-tile-id="205" onclick="prepareToUnlock(this)">
+<span>205</span>
+</div>
+</div>
+<div class="tile" id="tile-206" style="position:relative;">
+<img alt="Part 206" src="part_206.png"/>
+<div class="door" data-correct-number="255" data-tile-id="206" onclick="prepareToUnlock(this)">
+<span>206</span>
+</div>
+</div>
+<div class="tile" id="tile-207" style="position:relative;">
+<img alt="Part 207" src="part_207.png"/>
+<div class="door" data-correct-number="954" data-tile-id="207" onclick="prepareToUnlock(this)">
+<span>207</span>
+</div>
+</div>
+<div class="tile" id="tile-208" style="position:relative;">
+<img alt="Part 208" src="part_208.png"/>
+<div class="door" data-correct-number="79" data-tile-id="208" onclick="prepareToUnlock(this)">
+<span>208</span>
+</div>
+</div>
+<div class="tile" id="tile-209" style="position:relative;">
+<img alt="Part 209" class="visible" src="part_209.png"/>
+
+</div>
+<div class="tile" id="tile-210" style="position:relative;">
+<img alt="Part 210" src="part_210.png"/>
+<div class="door" data-correct-number="814" data-tile-id="210" onclick="prepareToUnlock(this)">
+<span>210</span>
+</div>
+</div>
+<div class="tile" id="tile-211" style="position:relative;">
+<img alt="Part 211" src="part_211.png"/>
+<div class="door" data-correct-number="444" data-tile-id="211" onclick="prepareToUnlock(this)">
+<span>211</span>
+</div>
+</div>
+<div class="tile" id="tile-212" style="position:relative;">
+<img alt="Part 212" src="part_212.png"/>
+<div class="door" data-correct-number="632" data-tile-id="212" onclick="prepareToUnlock(this)">
+<span>212</span>
+</div>
+</div>
+<div class="tile" id="tile-213" style="position:relative;">
+<img alt="Part 213" src="part_213.png"/>
+<div class="door" data-correct-number="61" data-tile-id="213" onclick="prepareToUnlock(this)">
+<span>213</span>
+</div>
+</div>
+<div class="tile" id="tile-214" style="position:relative;">
+<img alt="Part 214" src="part_214.png"/>
+<div class="door" data-correct-number="199" data-tile-id="214" onclick="prepareToUnlock(this)">
+<span>214</span>
+</div>
+</div>
+<div class="tile" id="tile-215" style="position:relative;">
+<img alt="Part 215" src="part_215.png"/>
+<div class="door" data-correct-number="535" data-tile-id="215" onclick="prepareToUnlock(this)">
+<span>215</span>
+</div>
+</div>
+<div class="tile" id="tile-216" style="position:relative;">
+<img alt="Part 216" src="part_216.png"/>
+<div class="door" data-correct-number="840" data-tile-id="216" onclick="prepareToUnlock(this)">
+<span>216</span>
+</div>
+</div>
+<div class="tile" id="tile-217" style="position:relative;">
+<img alt="Part 217" src="part_217.png"/>
+<div class="door" data-correct-number="334" data-tile-id="217" onclick="prepareToUnlock(this)">
+<span>217</span>
+</div>
+</div>
+<div class="tile" id="tile-218" style="position:relative;">
+<img alt="Part 218" src="part_218.png"/>
+<div class="door" data-correct-number="260" data-tile-id="218" onclick="prepareToUnlock(this)">
+<span>218</span>
+</div>
+</div>
+<div class="tile" id="tile-219" style="position:relative;">
+<img alt="Part 219" src="part_219.png"/>
+<div class="door" data-correct-number="751" data-tile-id="219" onclick="prepareToUnlock(this)">
+<span>219</span>
+</div>
+</div>
+<div class="tile" id="tile-220" style="position:relative;">
+<img alt="Part 220" src="part_220.png"/>
+<div class="door" data-correct-number="506" data-tile-id="220" onclick="prepareToUnlock(this)">
+<span>220</span>
+</div>
+</div>
+<div class="tile" id="tile-221" style="position:relative;">
+<img alt="Part 221" src="part_221.png"/>
+<div class="door" data-correct-number="309" data-tile-id="221" onclick="prepareToUnlock(this)">
+<span>221</span>
+</div>
+</div>
+<div class="tile" id="tile-222" style="position:relative;">
+<img alt="Part 222" src="part_222.png"/>
+<div class="door" data-correct-number="34" data-tile-id="222" onclick="prepareToUnlock(this)">
+<span>222</span>
+</div>
+</div>
+<div class="tile" id="tile-223" style="position:relative;">
+<img alt="Part 223" src="part_223.png"/>
+<div class="door" data-correct-number="765" data-tile-id="223" onclick="prepareToUnlock(this)">
+<span>223</span>
+</div>
+</div>
+<div class="tile" id="tile-224" style="position:relative;">
+<img alt="Part 224" src="part_224.png"/>
+<div class="door" data-correct-number="670" data-tile-id="224" onclick="prepareToUnlock(this)">
+<span>224</span>
+</div>
+</div>
+<div class="tile" id="tile-225" style="position:relative;">
+<img alt="Part 225" src="part_225.png"/>
+<div class="door" data-correct-number="605" data-tile-id="225" onclick="prepareToUnlock(this)">
+<span>225</span>
+</div>
+</div>
+<div class="tile" id="tile-226" style="position:relative;">
+<img alt="Part 226" src="part_226.png"/>
+<div class="door" data-correct-number="833" data-tile-id="226" onclick="prepareToUnlock(this)">
+<span>226</span>
+</div>
+</div>
+<div class="tile" id="tile-227" style="position:relative;">
+<img alt="Part 227" src="part_227.png"/>
+<div class="door" data-correct-number="651" data-tile-id="227" onclick="prepareToUnlock(this)">
+<span>227</span>
+</div>
+</div>
+<div class="tile" id="tile-228" style="position:relative;">
+<img alt="Part 228" src="part_228.png"/>
+<div class="door" data-correct-number="521" data-tile-id="228" onclick="prepareToUnlock(this)">
+<span>228</span>
+</div>
+</div>
+<div class="tile" id="tile-229" style="position:relative;">
+<img alt="Part 229" class="visible" src="part_229.png"/>
+
+</div>
+<div class="tile" id="tile-230" style="position:relative;">
+<img alt="Part 230" src="part_230.png"/>
+<div class="door" data-correct-number="253" data-tile-id="230" onclick="prepareToUnlock(this)">
+<span>230</span>
+</div>
+</div>
+<div class="tile" id="tile-231" style="position:relative;">
+<img alt="Part 231" class="visible" src="part_231.png"/>
+
+</div>
+<div class="tile" id="tile-232" style="position:relative;">
+<img alt="Part 232" src="part_232.png"/>
+<div class="door" data-correct-number="741" data-tile-id="232" onclick="prepareToUnlock(this)">
+<span>232</span>
+</div>
+</div>
+<div class="tile" id="tile-233" style="position:relative;">
+<img alt="Part 233" src="part_233.png"/>
+<div class="door" data-correct-number="746" data-tile-id="233" onclick="prepareToUnlock(this)">
+<span>233</span>
+</div>
+</div>
+<div class="tile" id="tile-234" style="position:relative;">
+<img alt="Part 234" src="part_234.png"/>
+<div class="door" data-correct-number="807" data-tile-id="234" onclick="prepareToUnlock(this)">
+<span>234</span>
+</div>
+</div>
+<div class="tile" id="tile-235" style="position:relative;">
+<img alt="Part 235" class="visible" src="part_235.png"/>
+
+</div>
+<div class="tile" id="tile-236" style="position:relative;">
+<img alt="Part 236" src="part_236.png"/>
+<div class="door" data-correct-number="556" data-tile-id="236" onclick="prepareToUnlock(this)">
+<span>236</span>
+</div>
+</div>
+<div class="tile" id="tile-237" style="position:relative;">
+<img alt="Part 237" src="part_237.png"/>
+<div class="door" data-correct-number="492" data-tile-id="237" onclick="prepareToUnlock(this)">
+<span>237</span>
+</div>
+</div>
+<div class="tile" id="tile-238" style="position:relative;">
+<img alt="Part 238" src="part_238.png"/>
+<div class="door" data-correct-number="906" data-tile-id="238" onclick="prepareToUnlock(this)">
+<span>238</span>
+</div>
+</div>
+<div class="tile" id="tile-239" style="position:relative;">
+<img alt="Part 239" src="part_239.png"/>
+<div class="door" data-correct-number="509" data-tile-id="239" onclick="prepareToUnlock(this)">
+<span>239</span>
+</div>
+</div>
+<div class="tile" id="tile-240" style="position:relative;">
+<img alt="Part 240" src="part_240.png"/>
+<div class="door" data-correct-number="760" data-tile-id="240" onclick="prepareToUnlock(this)">
+<span>240</span>
+</div>
+</div>
+<div class="tile" id="tile-241" style="position:relative;">
+<img alt="Part 241" class="visible" src="part_241.png"/>
+
+</div>
+<div class="tile" id="tile-242" style="position:relative;">
+<img alt="Part 242" class="visible" src="part_242.png"/>
+
+</div>
+<div class="tile" id="tile-243" style="position:relative;">
+<img alt="Part 243" src="part_243.png"/>
+<div class="door" data-correct-number="471" data-tile-id="243" onclick="prepareToUnlock(this)">
+<span>243</span>
+</div>
+</div>
+<div class="tile" id="tile-244" style="position:relative;">
+<img alt="Part 244" src="part_244.png"/>
+<div class="door" data-correct-number="222" data-tile-id="244" onclick="prepareToUnlock(this)">
+<span>244</span>
+</div>
+</div>
+<div class="tile" id="tile-245" style="position:relative;">
+<img alt="Part 245" src="part_245.png"/>
+<div class="door" data-correct-number="274" data-tile-id="245" onclick="prepareToUnlock(this)">
+<span>245</span>
+</div>
+</div>
+<div class="tile" id="tile-246" style="position:relative;">
+<img alt="Part 246" src="part_246.png"/>
+<div class="door" data-correct-number="804" data-tile-id="246" onclick="prepareToUnlock(this)">
+<span>246</span>
+</div>
+</div>
+<div class="tile" id="tile-247" style="position:relative;">
+<img alt="Part 247" src="part_247.png"/>
+<div class="door" data-correct-number="690" data-tile-id="247" onclick="prepareToUnlock(this)">
+<span>247</span>
+</div>
+</div>
+<div class="tile" id="tile-248" style="position:relative;">
+<img alt="Part 248" src="part_248.png"/>
+<div class="door" data-correct-number="560" data-tile-id="248" onclick="prepareToUnlock(this)">
+<span>248</span>
+</div>
+</div>
+<div class="tile" id="tile-249" style="position:relative;">
+<img alt="Part 249" src="part_249.png"/>
+<div class="door" data-correct-number="196" data-tile-id="249" onclick="prepareToUnlock(this)">
+<span>249</span>
+</div>
+</div>
+<div class="tile" id="tile-250" style="position:relative;">
+<img alt="Part 250" src="part_250.png"/>
+<div class="door" data-correct-number="324" data-tile-id="250" onclick="prepareToUnlock(this)">
+<span>250</span>
+</div>
+</div>
+<div class="tile" id="tile-251" style="position:relative;">
+<img alt="Part 251" class="visible" src="part_251.png"/>
+
+</div>
+<div class="tile" id="tile-252" style="position:relative;">
+<img alt="Part 252" src="part_252.png"/>
+<div class="door" data-correct-number="180" data-tile-id="252" onclick="prepareToUnlock(this)">
+<span>252</span>
+</div>
+</div>
+<div class="tile" id="tile-253" style="position:relative;">
+<img alt="Part 253" src="part_253.png"/>
+<div class="door" data-correct-number="645" data-tile-id="253" onclick="prepareToUnlock(this)">
+<span>253</span>
+</div>
+</div>
+<div class="tile" id="tile-254" style="position:relative;">
+<img alt="Part 254" src="part_254.png"/>
+<div class="door" data-correct-number="328" data-tile-id="254" onclick="prepareToUnlock(this)">
+<span>254</span>
+</div>
+</div>
+<div class="tile" id="tile-255" style="position:relative;">
+<img alt="Part 255" src="part_255.png"/>
+<div class="door" data-correct-number="283" data-tile-id="255" onclick="prepareToUnlock(this)">
+<span>255</span>
+</div>
+</div>
+<div class="tile" id="tile-256" style="position:relative;">
+<img alt="Part 256" src="part_256.png"/>
+<div class="door" data-correct-number="29" data-tile-id="256" onclick="prepareToUnlock(this)">
+<span>256</span>
+</div>
+</div>
+<div class="tile" id="tile-257" style="position:relative;">
+<img alt="Part 257" src="part_257.png"/>
+<div class="door" data-correct-number="719" data-tile-id="257" onclick="prepareToUnlock(this)">
+<span>257</span>
+</div>
+</div>
+<div class="tile" id="tile-258" style="position:relative;">
+<img alt="Part 258" src="part_258.png"/>
+<div class="door" data-correct-number="418" data-tile-id="258" onclick="prepareToUnlock(this)">
+<span>258</span>
+</div>
+</div>
+<div class="tile" id="tile-259" style="position:relative;">
+<img alt="Part 259" src="part_259.png"/>
+<div class="door" data-correct-number="631" data-tile-id="259" onclick="prepareToUnlock(this)">
+<span>259</span>
+</div>
+</div>
+<div class="tile" id="tile-260" style="position:relative;">
+<img alt="Part 260" src="part_260.png"/>
+<div class="door" data-correct-number="355" data-tile-id="260" onclick="prepareToUnlock(this)">
+<span>260</span>
+</div>
+</div>
+<div class="tile" id="tile-261" style="position:relative;">
+<img alt="Part 261" src="part_261.png"/>
+<div class="door" data-correct-number="543" data-tile-id="261" onclick="prepareToUnlock(this)">
+<span>261</span>
+</div>
+</div>
+<div class="tile" id="tile-262" style="position:relative;">
+<img alt="Part 262" src="part_262.png"/>
+<div class="door" data-correct-number="879" data-tile-id="262" onclick="prepareToUnlock(this)">
+<span>262</span>
+</div>
+</div>
+<div class="tile" id="tile-263" style="position:relative;">
+<img alt="Part 263" class="visible" src="part_263.png"/>
+
+</div>
+<div class="tile" id="tile-264" style="position:relative;">
+<img alt="Part 264" class="visible" src="part_264.png"/>
+
+</div>
+<div class="tile" id="tile-265" style="position:relative;">
+<img alt="Part 265" src="part_265.png"/>
+<div class="door" data-correct-number="510" data-tile-id="265" onclick="prepareToUnlock(this)">
+<span>265</span>
+</div>
+</div>
+<div class="tile" id="tile-266" style="position:relative;">
+<img alt="Part 266" src="part_266.png"/>
+<div class="door" data-correct-number="898" data-tile-id="266" onclick="prepareToUnlock(this)">
+<span>266</span>
+</div>
+</div>
+<div class="tile" id="tile-267" style="position:relative;">
+<img alt="Part 267" src="part_267.png"/>
+<div class="door" data-correct-number="940" data-tile-id="267" onclick="prepareToUnlock(this)">
+<span>267</span>
+</div>
+</div>
+<div class="tile" id="tile-268" style="position:relative;">
+<img alt="Part 268" class="visible" src="part_268.png"/>
+
+</div>
+<div class="tile" id="tile-269" style="position:relative;">
+<img alt="Part 269" src="part_269.png"/>
+<div class="door" data-correct-number="216" data-tile-id="269" onclick="prepareToUnlock(this)">
+<span>269</span>
+</div>
+</div>
+<div class="tile" id="tile-270" style="position:relative;">
+<img alt="Part 270" class="visible" src="part_270.png"/>
+
+</div>
+<div class="tile" id="tile-271" style="position:relative;">
+<img alt="Part 271" src="part_271.png"/>
+<div class="door" data-correct-number="523" data-tile-id="271" onclick="prepareToUnlock(this)">
+<span>271</span>
+</div>
+</div>
+<div class="tile" id="tile-272" style="position:relative;">
+<img alt="Part 272" src="part_272.png"/>
+<div class="door" data-correct-number="180" data-tile-id="272" onclick="prepareToUnlock(this)">
+<span>272</span>
+</div>
+</div>
+<div class="tile" id="tile-273" style="position:relative;">
+<img alt="Part 273" src="part_273.png"/>
+<div class="door" data-correct-number="642" data-tile-id="273" onclick="prepareToUnlock(this)">
+<span>273</span>
+</div>
+</div>
+<div class="tile" id="tile-274" style="position:relative;">
+<img alt="Part 274" src="part_274.png"/>
+<div class="door" data-correct-number="758" data-tile-id="274" onclick="prepareToUnlock(this)">
+<span>274</span>
+</div>
+</div>
+<div class="tile" id="tile-275" style="position:relative;">
+<img alt="Part 275" src="part_275.png"/>
+<div class="door" data-correct-number="788" data-tile-id="275" onclick="prepareToUnlock(this)">
+<span>275</span>
+</div>
+</div>
+<div class="tile" id="tile-276" style="position:relative;">
+<img alt="Part 276" class="visible" src="part_276.png"/>
+
+</div>
+<div class="tile" id="tile-277" style="position:relative;">
+<img alt="Part 277" class="visible" src="part_277.png"/>
+
+</div>
+<div class="tile" id="tile-278" style="position:relative;">
+<img alt="Part 278" class="visible" src="part_278.png"/>
+
+</div>
+<div class="tile" id="tile-279" style="position:relative;">
+<img alt="Part 279" src="part_279.png"/>
+<div class="door" data-correct-number="888" data-tile-id="279" onclick="prepareToUnlock(this)">
+<span>279</span>
+</div>
+</div>
+<div class="tile" id="tile-280" style="position:relative;">
+<img alt="Part 280" src="part_280.png"/>
+<div class="door" data-correct-number="932" data-tile-id="280" onclick="prepareToUnlock(this)">
+<span>280</span>
+</div>
+</div>
+<div class="tile" id="tile-281" style="position:relative;">
+<img alt="Part 281" src="part_281.png"/>
+<div class="door" data-correct-number="116" data-tile-id="281" onclick="prepareToUnlock(this)">
+<span>281</span>
+</div>
+</div>
+<div class="tile" id="tile-282" style="position:relative;">
+<img alt="Part 282" src="part_282.png"/>
+<div class="door" data-correct-number="146" data-tile-id="282" onclick="prepareToUnlock(this)">
+<span>282</span>
+</div>
+</div>
+<div class="tile" id="tile-283" style="position:relative;">
+<img alt="Part 283" src="part_283.png"/>
+<div class="door" data-correct-number="693" data-tile-id="283" onclick="prepareToUnlock(this)">
+<span>283</span>
+</div>
+</div>
+<div class="tile" id="tile-284" style="position:relative;">
+<img alt="Part 284" src="part_284.png"/>
+<div class="door" data-correct-number="829" data-tile-id="284" onclick="prepareToUnlock(this)">
+<span>284</span>
+</div>
+</div>
+<div class="tile" id="tile-285" style="position:relative;">
+<img alt="Part 285" src="part_285.png"/>
+<div class="door" data-correct-number="761" data-tile-id="285" onclick="prepareToUnlock(this)">
+<span>285</span>
+</div>
+</div>
+<div class="tile" id="tile-286" style="position:relative;">
+<img alt="Part 286" src="part_286.png"/>
+<div class="door" data-correct-number="283" data-tile-id="286" onclick="prepareToUnlock(this)">
+<span>286</span>
+</div>
+</div>
+<div class="tile" id="tile-287" style="position:relative;">
+<img alt="Part 287" src="part_287.png"/>
+<div class="door" data-correct-number="722" data-tile-id="287" onclick="prepareToUnlock(this)">
+<span>287</span>
+</div>
+</div>
+<div class="tile" id="tile-288" style="position:relative;">
+<img alt="Part 288" src="part_288.png"/>
+<div class="door" data-correct-number="357" data-tile-id="288" onclick="prepareToUnlock(this)">
+<span>288</span>
+</div>
+</div>
+<div class="tile" id="tile-289" style="position:relative;">
+<img alt="Part 289" src="part_289.png"/>
+<div class="door" data-correct-number="31" data-tile-id="289" onclick="prepareToUnlock(this)">
+<span>289</span>
+</div>
+</div>
+<div class="tile" id="tile-290" style="position:relative;">
+<img alt="Part 290" src="part_290.png"/>
+<div class="door" data-correct-number="514" data-tile-id="290" onclick="prepareToUnlock(this)">
+<span>290</span>
+</div>
+</div>
+<div class="tile" id="tile-291" style="position:relative;">
+<img alt="Part 291" src="part_291.png"/>
+<div class="door" data-correct-number="842" data-tile-id="291" onclick="prepareToUnlock(this)">
+<span>291</span>
+</div>
+</div>
+<div class="tile" id="tile-292" style="position:relative;">
+<img alt="Part 292" class="visible" src="part_292.png"/>
+
+</div>
+<div class="tile" id="tile-293" style="position:relative;">
+<img alt="Part 293" src="part_293.png"/>
+<div class="door" data-correct-number="560" data-tile-id="293" onclick="prepareToUnlock(this)">
+<span>293</span>
+</div>
+</div>
+<div class="tile" id="tile-294" style="position:relative;">
+<img alt="Part 294" src="part_294.png"/>
+<div class="door" data-correct-number="918" data-tile-id="294" onclick="prepareToUnlock(this)">
+<span>294</span>
+</div>
+</div>
+<div class="tile" id="tile-295" style="position:relative;">
+<img alt="Part 295" src="part_295.png"/>
+<div class="door" data-correct-number="936" data-tile-id="295" onclick="prepareToUnlock(this)">
+<span>295</span>
+</div>
+</div>
+<div class="tile" id="tile-296" style="position:relative;">
+<img alt="Part 296" src="part_296.png"/>
+<div class="door" data-correct-number="658" data-tile-id="296" onclick="prepareToUnlock(this)">
+<span>296</span>
+</div>
+</div>
+<div class="tile" id="tile-297" style="position:relative;">
+<img alt="Part 297" class="visible" src="part_297.png"/>
+
+</div>
+<div class="tile" id="tile-298" style="position:relative;">
+<img alt="Part 298" src="part_298.png"/>
+<div class="door" data-correct-number="270" data-tile-id="298" onclick="prepareToUnlock(this)">
+<span>298</span>
+</div>
+</div>
+<div class="tile" id="tile-299" style="position:relative;">
+<img alt="Part 299" src="part_299.png"/>
+<div class="door" data-correct-number="901" data-tile-id="299" onclick="prepareToUnlock(this)">
+<span>299</span>
+</div>
+</div>
+<div class="tile" id="tile-300" style="position:relative;">
+<img alt="Part 300" class="visible" src="part_300.png"/>
+
+</div>
+<div class="tile" id="tile-301" style="position:relative;">
+<img alt="Part 301" src="part_301.png"/>
+<div class="door" data-correct-number="644" data-tile-id="301" onclick="prepareToUnlock(this)">
+<span>301</span>
+</div>
+</div>
+<div class="tile" id="tile-302" style="position:relative;">
+<img alt="Part 302" src="part_302.png"/>
+<div class="door" data-correct-number="806" data-tile-id="302" onclick="prepareToUnlock(this)">
+<span>302</span>
+</div>
+</div>
+<div class="tile" id="tile-303" style="position:relative;">
+<img alt="Part 303" src="part_303.png"/>
+<div class="door" data-correct-number="181" data-tile-id="303" onclick="prepareToUnlock(this)">
+<span>303</span>
+</div>
+</div>
+<div class="tile" id="tile-304" style="position:relative;">
+<img alt="Part 304" src="part_304.png"/>
+<div class="door" data-correct-number="746" data-tile-id="304" onclick="prepareToUnlock(this)">
+<span>304</span>
+</div>
+</div>
+<div class="tile" id="tile-305" style="position:relative;">
+<img alt="Part 305" src="part_305.png"/>
+<div class="door" data-correct-number="346" data-tile-id="305" onclick="prepareToUnlock(this)">
+<span>305</span>
+</div>
+</div>
+<div class="tile" id="tile-306" style="position:relative;">
+<img alt="Part 306" src="part_306.png"/>
+<div class="door" data-correct-number="185" data-tile-id="306" onclick="prepareToUnlock(this)">
+<span>306</span>
+</div>
+</div>
+<div class="tile" id="tile-307" style="position:relative;">
+<img alt="Part 307" src="part_307.png"/>
+<div class="door" data-correct-number="424" data-tile-id="307" onclick="prepareToUnlock(this)">
+<span>307</span>
+</div>
+</div>
+<div class="tile" id="tile-308" style="position:relative;">
+<img alt="Part 308" src="part_308.png"/>
+<div class="door" data-correct-number="960" data-tile-id="308" onclick="prepareToUnlock(this)">
+<span>308</span>
+</div>
+</div>
+<div class="tile" id="tile-309" style="position:relative;">
+<img alt="Part 309" src="part_309.png"/>
+<div class="door" data-correct-number="393" data-tile-id="309" onclick="prepareToUnlock(this)">
+<span>309</span>
+</div>
+</div>
+<div class="tile" id="tile-310" style="position:relative;">
+<img alt="Part 310" src="part_310.png"/>
+<div class="door" data-correct-number="114" data-tile-id="310" onclick="prepareToUnlock(this)">
+<span>310</span>
+</div>
+</div>
+<div class="tile" id="tile-311" style="position:relative;">
+<img alt="Part 311" src="part_311.png"/>
+<div class="door" data-correct-number="38" data-tile-id="311" onclick="prepareToUnlock(this)">
+<span>311</span>
+</div>
+</div>
+<div class="tile" id="tile-312" style="position:relative;">
+<img alt="Part 312" src="part_312.png"/>
+<div class="door" data-correct-number="129" data-tile-id="312" onclick="prepareToUnlock(this)">
+<span>312</span>
+</div>
+</div>
+<div class="tile" id="tile-313" style="position:relative;">
+<img alt="Part 313" src="part_313.png"/>
+<div class="door" data-correct-number="401" data-tile-id="313" onclick="prepareToUnlock(this)">
+<span>313</span>
+</div>
+</div>
+<div class="tile" id="tile-314" style="position:relative;">
+<img alt="Part 314" src="part_314.png"/>
+<div class="door" data-correct-number="878" data-tile-id="314" onclick="prepareToUnlock(this)">
+<span>314</span>
+</div>
+</div>
+<div class="tile" id="tile-315" style="position:relative;">
+<img alt="Part 315" src="part_315.png"/>
+<div class="door" data-correct-number="851" data-tile-id="315" onclick="prepareToUnlock(this)">
+<span>315</span>
+</div>
+</div>
+<div class="tile" id="tile-316" style="position:relative;">
+<img alt="Part 316" src="part_316.png"/>
+<div class="door" data-correct-number="998" data-tile-id="316" onclick="prepareToUnlock(this)">
+<span>316</span>
+</div>
+</div>
+<div class="tile" id="tile-317" style="position:relative;">
+<img alt="Part 317" src="part_317.png"/>
+<div class="door" data-correct-number="671" data-tile-id="317" onclick="prepareToUnlock(this)">
+<span>317</span>
+</div>
+</div>
+<div class="tile" id="tile-318" style="position:relative;">
+<img alt="Part 318" src="part_318.png"/>
+<div class="door" data-correct-number="966" data-tile-id="318" onclick="prepareToUnlock(this)">
+<span>318</span>
+</div>
+</div>
+<div class="tile" id="tile-319" style="position:relative;">
+<img alt="Part 319" src="part_319.png"/>
+<div class="door" data-correct-number="832" data-tile-id="319" onclick="prepareToUnlock(this)">
+<span>319</span>
+</div>
+</div>
+<div class="tile" id="tile-320" style="position:relative;">
+<img alt="Part 320" src="part_320.png"/>
+<div class="door" data-correct-number="797" data-tile-id="320" onclick="prepareToUnlock(this)">
+<span>320</span>
+</div>
+</div>
+<div class="tile" id="tile-321" style="position:relative;">
+<img alt="Part 321" src="part_321.png"/>
+<div class="door" data-correct-number="575" data-tile-id="321" onclick="prepareToUnlock(this)">
+<span>321</span>
+</div>
+</div>
+<div class="tile" id="tile-322" style="position:relative;">
+<img alt="Part 322" src="part_322.png"/>
+<div class="door" data-correct-number="829" data-tile-id="322" onclick="prepareToUnlock(this)">
+<span>322</span>
+</div>
+</div>
+<div class="tile" id="tile-323" style="position:relative;">
+<img alt="Part 323" src="part_323.png"/>
+<div class="door" data-correct-number="600" data-tile-id="323" onclick="prepareToUnlock(this)">
+<span>323</span>
+</div>
+</div>
+<div class="tile" id="tile-324" style="position:relative;">
+<img alt="Part 324" src="part_324.png"/>
+<div class="door" data-correct-number="737" data-tile-id="324" onclick="prepareToUnlock(this)">
+<span>324</span>
+</div>
+</div>
+<div class="tile" id="tile-325" style="position:relative;">
+<img alt="Part 325" src="part_325.png"/>
+<div class="door" data-correct-number="865" data-tile-id="325" onclick="prepareToUnlock(this)">
+<span>325</span>
+</div>
+</div>
+<div class="tile" id="tile-326" style="position:relative;">
+<img alt="Part 326" src="part_326.png"/>
+<div class="door" data-correct-number="862" data-tile-id="326" onclick="prepareToUnlock(this)">
+<span>326</span>
+</div>
+</div>
+<div class="tile" id="tile-327" style="position:relative;">
+<img alt="Part 327" src="part_327.png"/>
+<div class="door" data-correct-number="817" data-tile-id="327" onclick="prepareToUnlock(this)">
+<span>327</span>
+</div>
+</div>
+<div class="tile" id="tile-328" style="position:relative;">
+<img alt="Part 328" src="part_328.png"/>
+<div class="door" data-correct-number="629" data-tile-id="328" onclick="prepareToUnlock(this)">
+<span>328</span>
+</div>
+</div>
+<div class="tile" id="tile-329" style="position:relative;">
+<img alt="Part 329" src="part_329.png"/>
+<div class="door" data-correct-number="688" data-tile-id="329" onclick="prepareToUnlock(this)">
+<span>329</span>
+</div>
+</div>
+<div class="tile" id="tile-330" style="position:relative;">
+<img alt="Part 330" src="part_330.png"/>
+<div class="door" data-correct-number="85" data-tile-id="330" onclick="prepareToUnlock(this)">
+<span>330</span>
+</div>
+</div>
+<div class="tile" id="tile-331" style="position:relative;">
+<img alt="Part 331" src="part_331.png"/>
+<div class="door" data-correct-number="224" data-tile-id="331" onclick="prepareToUnlock(this)">
+<span>331</span>
+</div>
+</div>
+<div class="tile" id="tile-332" style="position:relative;">
+<img alt="Part 332" class="visible" src="part_332.png"/>
+
+</div>
+<div class="tile" id="tile-333" style="position:relative;">
+<img alt="Part 333" src="part_333.png"/>
+<div class="door" data-correct-number="903" data-tile-id="333" onclick="prepareToUnlock(this)">
+<span>333</span>
+</div>
+</div>
+<div class="tile" id="tile-334" style="position:relative;">
+<img alt="Part 334" src="part_334.png"/>
+<div class="door" data-correct-number="610" data-tile-id="334" onclick="prepareToUnlock(this)">
+<span>334</span>
+</div>
+</div>
+<div class="tile" id="tile-335" style="position:relative;">
+<img alt="Part 335" src="part_335.png"/>
+<div class="door" data-correct-number="611" data-tile-id="335" onclick="prepareToUnlock(this)">
+<span>335</span>
+</div>
+</div>
+<div class="tile" id="tile-336" style="position:relative;">
+<img alt="Part 336" src="part_336.png"/>
+<div class="door" data-correct-number="875" data-tile-id="336" onclick="prepareToUnlock(this)">
+<span>336</span>
+</div>
+</div>
+<div class="tile" id="tile-337" style="position:relative;">
+<img alt="Part 337" src="part_337.png"/>
+<div class="door" data-correct-number="647" data-tile-id="337" onclick="prepareToUnlock(this)">
+<span>337</span>
+</div>
+</div>
+<div class="tile" id="tile-338" style="position:relative;">
+<img alt="Part 338" src="part_338.png"/>
+<div class="door" data-correct-number="770" data-tile-id="338" onclick="prepareToUnlock(this)">
+<span>338</span>
+</div>
+</div>
+<div class="tile" id="tile-339" style="position:relative;">
+<img alt="Part 339" src="part_339.png"/>
+<div class="door" data-correct-number="153" data-tile-id="339" onclick="prepareToUnlock(this)">
+<span>339</span>
+</div>
+</div>
+<div class="tile" id="tile-340" style="position:relative;">
+<img alt="Part 340" src="part_340.png"/>
+<div class="door" data-correct-number="92" data-tile-id="340" onclick="prepareToUnlock(this)">
+<span>340</span>
+</div>
+</div>
+<div class="tile" id="tile-341" style="position:relative;">
+<img alt="Part 341" src="part_341.png"/>
+<div class="door" data-correct-number="273" data-tile-id="341" onclick="prepareToUnlock(this)">
+<span>341</span>
+</div>
+</div>
+<div class="tile" id="tile-342" style="position:relative;">
+<img alt="Part 342" src="part_342.png"/>
+<div class="door" data-correct-number="961" data-tile-id="342" onclick="prepareToUnlock(this)">
+<span>342</span>
+</div>
+</div>
+<div class="tile" id="tile-343" style="position:relative;">
+<img alt="Part 343" src="part_343.png"/>
+<div class="door" data-correct-number="986" data-tile-id="343" onclick="prepareToUnlock(this)">
+<span>343</span>
+</div>
+</div>
+<div class="tile" id="tile-344" style="position:relative;">
+<img alt="Part 344" src="part_344.png"/>
+<div class="door" data-correct-number="546" data-tile-id="344" onclick="prepareToUnlock(this)">
+<span>344</span>
+</div>
+</div>
+<div class="tile" id="tile-345" style="position:relative;">
+<img alt="Part 345" src="part_345.png"/>
+<div class="door" data-correct-number="318" data-tile-id="345" onclick="prepareToUnlock(this)">
+<span>345</span>
+</div>
+</div>
+<div class="tile" id="tile-346" style="position:relative;">
+<img alt="Part 346" src="part_346.png"/>
+<div class="door" data-correct-number="71" data-tile-id="346" onclick="prepareToUnlock(this)">
+<span>346</span>
+</div>
+</div>
+<div class="tile" id="tile-347" style="position:relative;">
+<img alt="Part 347" src="part_347.png"/>
+<div class="door" data-correct-number="114" data-tile-id="347" onclick="prepareToUnlock(this)">
+<span>347</span>
+</div>
+</div>
+<div class="tile" id="tile-348" style="position:relative;">
+<img alt="Part 348" src="part_348.png"/>
+<div class="door" data-correct-number="750" data-tile-id="348" onclick="prepareToUnlock(this)">
+<span>348</span>
+</div>
+</div>
+<div class="tile" id="tile-349" style="position:relative;">
+<img alt="Part 349" src="part_349.png"/>
+<div class="door" data-correct-number="787" data-tile-id="349" onclick="prepareToUnlock(this)">
+<span>349</span>
+</div>
+</div>
+<div class="tile" id="tile-350" style="position:relative;">
+<img alt="Part 350" src="part_350.png"/>
+<div class="door" data-correct-number="210" data-tile-id="350" onclick="prepareToUnlock(this)">
+<span>350</span>
+</div>
+</div>
+<div class="tile" id="tile-351" style="position:relative;">
+<img alt="Part 351" src="part_351.png"/>
+<div class="door" data-correct-number="394" data-tile-id="351" onclick="prepareToUnlock(this)">
+<span>351</span>
+</div>
+</div>
+<div class="tile" id="tile-352" style="position:relative;">
+<img alt="Part 352" src="part_352.png"/>
+<div class="door" data-correct-number="11" data-tile-id="352" onclick="prepareToUnlock(this)">
+<span>352</span>
+</div>
+</div>
+<div class="tile" id="tile-353" style="position:relative;">
+<img alt="Part 353" src="part_353.png"/>
+<div class="door" data-correct-number="973" data-tile-id="353" onclick="prepareToUnlock(this)">
+<span>353</span>
+</div>
+</div>
+<div class="tile" id="tile-354" style="position:relative;">
+<img alt="Part 354" src="part_354.png"/>
+<div class="door" data-correct-number="393" data-tile-id="354" onclick="prepareToUnlock(this)">
+<span>354</span>
+</div>
+</div>
+<div class="tile" id="tile-355" style="position:relative;">
+<img alt="Part 355" src="part_355.png"/>
+<div class="door" data-correct-number="623" data-tile-id="355" onclick="prepareToUnlock(this)">
+<span>355</span>
+</div>
+</div>
+<div class="tile" id="tile-356" style="position:relative;">
+<img alt="Part 356" src="part_356.png"/>
+<div class="door" data-correct-number="989" data-tile-id="356" onclick="prepareToUnlock(this)">
+<span>356</span>
+</div>
+</div>
+<div class="tile" id="tile-357" style="position:relative;">
+<img alt="Part 357" src="part_357.png"/>
+<div class="door" data-correct-number="615" data-tile-id="357" onclick="prepareToUnlock(this)">
+<span>357</span>
+</div>
+</div>
+<div class="tile" id="tile-358" style="position:relative;">
+<img alt="Part 358" src="part_358.png"/>
+<div class="door" data-correct-number="629" data-tile-id="358" onclick="prepareToUnlock(this)">
+<span>358</span>
+</div>
+</div>
+<div class="tile" id="tile-359" style="position:relative;">
+<img alt="Part 359" src="part_359.png"/>
+<div class="door" data-correct-number="89" data-tile-id="359" onclick="prepareToUnlock(this)">
+<span>359</span>
+</div>
+</div>
+<div class="tile" id="tile-360" style="position:relative;">
+<img alt="Part 360" src="part_360.png"/>
+<div class="door" data-correct-number="707" data-tile-id="360" onclick="prepareToUnlock(this)">
+<span>360</span>
+</div>
+</div>
+<div class="tile" id="tile-361" style="position:relative;">
+<img alt="Part 361" src="part_361.png"/>
+<div class="door" data-correct-number="500" data-tile-id="361" onclick="prepareToUnlock(this)">
+<span>361</span>
+</div>
+</div>
+<div class="tile" id="tile-362" style="position:relative;">
+<img alt="Part 362" src="part_362.png"/>
+<div class="door" data-correct-number="353" data-tile-id="362" onclick="prepareToUnlock(this)">
+<span>362</span>
+</div>
+</div>
+<div class="tile" id="tile-363" style="position:relative;">
+<img alt="Part 363" src="part_363.png"/>
+<div class="door" data-correct-number="364" data-tile-id="363" onclick="prepareToUnlock(this)">
+<span>363</span>
+</div>
+</div>
+<div class="tile" id="tile-364" style="position:relative;">
+<img alt="Part 364" src="part_364.png"/>
+<div class="door" data-correct-number="194" data-tile-id="364" onclick="prepareToUnlock(this)">
+<span>364</span>
+</div>
+</div>
+<div class="tile" id="tile-365" style="position:relative;">
+<img alt="Part 365" src="part_365.png"/>
+<div class="door" data-correct-number="313" data-tile-id="365" onclick="prepareToUnlock(this)">
+<span>365</span>
+</div>
+</div>
+<div class="tile" id="tile-366" style="position:relative;">
+<img alt="Part 366" src="part_366.png"/>
+<div class="door" data-correct-number="769" data-tile-id="366" onclick="prepareToUnlock(this)">
+<span>366</span>
+</div>
+</div>
+<div class="tile" id="tile-367" style="position:relative;">
+<img alt="Part 367" src="part_367.png"/>
+<div class="door" data-correct-number="278" data-tile-id="367" onclick="prepareToUnlock(this)">
+<span>367</span>
+</div>
+</div>
+<div class="tile" id="tile-368" style="position:relative;">
+<img alt="Part 368" src="part_368.png"/>
+<div class="door" data-correct-number="492" data-tile-id="368" onclick="prepareToUnlock(this)">
+<span>368</span>
+</div>
+</div>
+<div class="tile" id="tile-369" style="position:relative;">
+<img alt="Part 369" src="part_369.png"/>
+<div class="door" data-correct-number="829" data-tile-id="369" onclick="prepareToUnlock(this)">
+<span>369</span>
+</div>
+</div>
+<div class="tile" id="tile-370" style="position:relative;">
+<img alt="Part 370" src="part_370.png"/>
+<div class="door" data-correct-number="606" data-tile-id="370" onclick="prepareToUnlock(this)">
+<span>370</span>
+</div>
+</div>
+<div class="tile" id="tile-371" style="position:relative;">
+<img alt="Part 371" src="part_371.png"/>
+<div class="door" data-correct-number="831" data-tile-id="371" onclick="prepareToUnlock(this)">
+<span>371</span>
+</div>
+</div>
+<div class="tile" id="tile-372" style="position:relative;">
+<img alt="Part 372" src="part_372.png"/>
+<div class="door" data-correct-number="236" data-tile-id="372" onclick="prepareToUnlock(this)">
+<span>372</span>
+</div>
+</div>
+<div class="tile" id="tile-373" style="position:relative;">
+<img alt="Part 373" src="part_373.png"/>
+<div class="door" data-correct-number="791" data-tile-id="373" onclick="prepareToUnlock(this)">
+<span>373</span>
+</div>
+</div>
+<div class="tile" id="tile-374" style="position:relative;">
+<img alt="Part 374" src="part_374.png"/>
+<div class="door" data-correct-number="867" data-tile-id="374" onclick="prepareToUnlock(this)">
+<span>374</span>
+</div>
+</div>
+<div class="tile" id="tile-375" style="position:relative;">
+<img alt="Part 375" class="visible" src="part_375.png"/>
+
+</div>
+<div class="tile" id="tile-376" style="position:relative;">
+<img alt="Part 376" src="part_376.png"/>
+<div class="door" data-correct-number="780" data-tile-id="376" onclick="prepareToUnlock(this)">
+<span>376</span>
+</div>
+</div>
+<div class="tile" id="tile-377" style="position:relative;">
+<img alt="Part 377" src="part_377.png"/>
+<div class="door" data-correct-number="782" data-tile-id="377" onclick="prepareToUnlock(this)">
+<span>377</span>
+</div>
+</div>
+<div class="tile" id="tile-378" style="position:relative;">
+<img alt="Part 378" src="part_378.png"/>
+<div class="door" data-correct-number="143" data-tile-id="378" onclick="prepareToUnlock(this)">
+<span>378</span>
+</div>
+</div>
+<div class="tile" id="tile-379" style="position:relative;">
+<img alt="Part 379" src="part_379.png"/>
+<div class="door" data-correct-number="91" data-tile-id="379" onclick="prepareToUnlock(this)">
+<span>379</span>
+</div>
+</div>
+<div class="tile" id="tile-380" style="position:relative;">
+<img alt="Part 380" src="part_380.png"/>
+<div class="door" data-correct-number="271" data-tile-id="380" onclick="prepareToUnlock(this)">
+<span>380</span>
+</div>
+</div>
+</div>
+<footer>
+<p>© 2024 - A magical gift inspired by Middle-earth.</p>
+</footer>
+<script>
+        // Load unlocked tiles from Local Storage
+        const unlockedTiles = JSON.parse(localStorage.getItem('unlockedTiles')) || [];
+
+        // Open previously unlocked tiles
+        unlockedTiles.forEach(tileId => {
+            const tile = document.getElementById(`tile-${tileId}`);
+            const door = tile.querySelector('.door');
+            const img = tile.querySelector('img');
+            if (door) door.style.display = 'none';
+            if (img) img.classList.add('visible');
+        });
+
+        // Prepare to unlock a door
+        function prepareToUnlock(doorElement) {
+            const selectedTileId = doorElement.getAttribute('data-tile-id');
+            const correctNumber = doorElement.getAttribute('data-correct-number');
+            const userInput = prompt(`Enter the secret number to unlock Tile ${selectedTileId}:`);
+            if (parseInt(userInput) === parseInt(correctNumber)) {
+                unlockTile(selectedTileId);
+            } else {
+                alert("Incorrect number. Please try again!");
+            }
+        }
+
+        // Unlock the tile after correct input
+        function unlockTile(tileId) {
+            if (!unlockedTiles.includes(tileId)) {
+                unlockedTiles.push(tileId);
+                localStorage.setItem('unlockedTiles', JSON.stringify(unlockedTiles));
+            }
+            const tile = document.getElementById(`tile-${tileId}`);
+            const img = tile.querySelector('img');
+            const door = tile.querySelector('.door');
+            if (img) img.classList.add('visible');
+            if (door) door.style.display = 'none';
+            alert(`Tile ${tileId} has been unlocked!`);
+        }
+    </script>
+</body>
+</html>
