@@ -2783,6 +2783,7 @@
         }
     </script>
     <script>
+<script>
 document.addEventListener("DOMContentLoaded", function() {
     const openDoors = [26, 47, 48, 60, 66, 72, 74, 75, 78, 80, 113, 115, 131, 138, 155, 161, 163, 168, 172, 176, 188, 193, 197, 209, 229, 231, 235, 241, 242, 251, 263, 264, 268, 270, 276, 277, 278, 292, 297, 300, 332, 375];
 
@@ -2797,12 +2798,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 img.classList.add('visible');
             }
 
-            // Tür unbrauchbar machen oder entfernen
+            // Tür komplett entfernen
             if (door) {
-                door.removeAttribute('data-correct-number');
-                door.removeAttribute('onclick');
-                door.style.pointerEvents = 'none';
-                door.style.opacity = '0.5';
+                door.remove();
             }
         }
     });
